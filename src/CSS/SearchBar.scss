@@ -1,0 +1,42 @@
+@import "../Variables/Variables.scss";
+
+#searchBar {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#searchBarHeader {
+  color: $whiteColor;
+  font-size: 40px;
+  font-family: $pokemonFont;
+  letter-spacing: 0.09em;
+  //   font-family: $bodyFont;
+  //   font-family: $titleFont;
+}
+.test {
+  color: $whiteColor;
+  border: white solid 1px;
+}
+.searchBarInput {
+  font-size: 18px;
+  height: 40px;
+  width: 50%;
+  padding: 5px 10px;
+}
+.searchBarInput::placeholder {
+  text-align: center;
+  font-family: $titleFont;
+}
+.searchBarInputFieldAndButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.searchBarInputFieldAndButton button {
+  font-family: $titleFont;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 5px 10px;
+}

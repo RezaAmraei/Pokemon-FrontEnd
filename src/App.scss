@@ -1,0 +1,24 @@
+@import "./Variables/Variables.scss";
+* {
+  padding: 0;
+  margin: 0;
+  font-family: $bodyFont;
+}
+
+body {
+  background-color: $backgroundColor;
+}
+#root {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.App {
+  max-width: 1350px;
+  width: 1350px;
+  display: flex;
+}
+.test {
+  width: auto;
+}

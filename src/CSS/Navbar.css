@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  width: 90%;
+  height: 80px;
+  background-color: rgb(56, 56, 56);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: white 1px solid;
+}
+
+.navbar a {
+  color: rgb(233, 233, 233);
+  font-size: 27px;
+  text-decoration: none;
+  font-family: "Pokemon Solid", sans-serif;
+  margin: 10px;
+}
+
+.navbar span {
+  color: rgb(233, 233, 233);
+  font-family: "Pokemon Solid", sans-serif;
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.links {
+  margin-top: 20px;
+}/*# sourceMappingURL=Navbar.css.map */

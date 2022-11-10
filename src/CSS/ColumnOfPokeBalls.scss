@@ -1,0 +1,10 @@
+.columnForPokeBalls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 97vh;
+}
+
+.columnForPokeBalls img {
+  height: 210px;
+}
