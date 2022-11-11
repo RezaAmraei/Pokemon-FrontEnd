@@ -1,0 +1,32 @@
+.tableForData {
+  color: rgb(233, 233, 233);
+  font-family: "Pokemon Solid", sans-serif;
+}
+
+.tableForData caption span,
+.tableForData caption {
+  font-size: 30px;
+  font-family: "Pokemon Solid", sans-serif;
+}
+
+.tableForData th {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+.tableForData td {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tableForData tr {
+  text-align: left;
+}
+
+.tableForData thead {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+}/*# sourceMappingURL=TableForData.css.map */

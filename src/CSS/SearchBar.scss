@@ -1,19 +1,17 @@
 @import "../Variables/Variables.scss";
 
 #searchBar {
-  margin-top: 100px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#searchBarHeader {
+#searchBarHeader span {
   color: $whiteColor;
   font-size: 40px;
   font-family: $pokemonFont;
   letter-spacing: 0.09em;
-  //   font-family: $bodyFont;
-  //   font-family: $titleFont;
 }
 .test {
   color: $whiteColor;

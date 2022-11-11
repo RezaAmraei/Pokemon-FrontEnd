@@ -1,0 +1,15 @@
+.pokemonData {
+  display: flex;
+  flex-direction: column;
+}
+
+#nameOfPokemon {
+  font-family: "Pokemon Solid", sans-serif;
+  font-size: 50px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.dataOfPokemonImages img {
+  height: 300px;
+}/*# sourceMappingURL=DataOfPokemon.css.map */

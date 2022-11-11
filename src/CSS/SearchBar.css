@@ -1,12 +1,12 @@
 #searchBar {
-  margin-top: 100px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#searchBarHeader {
+#searchBarHeader span {
   color: rgb(233, 233, 233);
   font-size: 40px;
   font-family: "Pokemon Solid", sans-serif;

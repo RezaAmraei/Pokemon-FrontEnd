@@ -1,0 +1,29 @@
+@import "../Variables/Variables.scss";
+.tableForData {
+  color: $whiteColor;
+  font-family: $pokemonFont;
+}
+.tableForData caption span,
+.tableForData caption {
+  font-size: 30px;
+  font-family: $pokemonFont;
+}
+.tableForData th {
+  display: block;
+  font-family: $titleFont;
+  font-weight: normal;
+}
+.tableForData td {
+  display: block;
+  font-family: $titleFont;
+}
+.tableForData tr {
+  text-align: left;
+}
+.tableForData thead {
+  display: flex;
+  justify-content: center;
+
+  gap: 20px;
+  font-size: 20px;
+}

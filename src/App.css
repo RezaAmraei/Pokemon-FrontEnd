@@ -22,4 +22,76 @@ body {
 
 .test {
   width: auto;
+}
+
+.fire {
+  color: #ef8031 !important;
+}
+
+.water {
+  color: #6890f0 !important;
+}
+
+.grass {
+  color: #78c850 !important;
+}
+
+.electric {
+  color: #f8d030 !important;
+}
+
+.ice {
+  color: #88d1f3 !important;
+}
+
+.fighting {
+  color: #ef6138 !important;
+}
+
+.poison {
+  color: #9b69d9 !important;
+}
+
+.ground {
+  color: #a9702b !important;
+}
+
+.flying {
+  color: #94b2c7 !important;
+}
+
+.psychic {
+  color: #f81c91 !important;
+}
+
+.bug {
+  color: #3b9950 !important;
+}
+
+.rock {
+  color: #8b3e21 !important;
+}
+
+.ghost {
+  color: #906790 !important;
+}
+
+.dark {
+  color: #5a5979 !important;
+}
+
+.dragon {
+  color: #7f6adf !important;
+}
+
+.steel {
+  color: #908d9f !important;
+}
+
+.fairy {
+  color: #f1adf1 !important;
+}
+
+.normal {
+  color: #a8a878 !important;
 }/*# sourceMappingURL=App.css.map */
