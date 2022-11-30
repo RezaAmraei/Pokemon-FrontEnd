@@ -14,9 +14,9 @@
   border-bottom: white 1px solid;
 }
 
-.navbar a {
+.linksSpan {
   color: $whiteColor;
-  font-size: 27px;
+  font-size: 27px !important;
   text-decoration: none;
 
   // font-family: $bodyFont;

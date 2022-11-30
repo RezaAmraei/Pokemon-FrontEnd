@@ -12,15 +12,15 @@ const Main = () => {
     <div className="mainPage">
       <ColumnOfPokeBalls side="left" />
       <div className="middleColumn">
-        <NavBar />
+        <NavBar types={types} />
         <SearchBar
           pokemonForSearchBar={pokemonForSearchBar}
           setPokemonForSearchBar={setPokemonForSearchBar}
-          pokemonDisplay={pokemonDisplay}
           setPokemonDisplay={setPokemonDisplay}
           setTypes={setTypes}
           types={types}
         />
+
         {pokemonDisplay && (
           <DataOfPokemon pokemonDisplay={pokemonDisplay} types={types} />
         )}
@@ -31,4 +31,3 @@ const Main = () => {
 };
 
 export default Main;
-// look into pokemon?limit=6000&offset=0 for list of names

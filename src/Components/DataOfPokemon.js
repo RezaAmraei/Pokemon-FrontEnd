@@ -3,10 +3,12 @@ import "../CSS/DataOfPokemon.css";
 import TableForData from "./TableForData";
 import UpperCaseFirstLetter from "../Utils/UpperCaseFirstLetter";
 import SplitStringInHalf from "../Utils/SplitStringInHalf";
+import SetUpForTables from "../Utils/SetUpForTables";
+
 const DataOfPokemon = ({ pokemonDisplay, types }) => {
   let splitName = SplitStringInHalf(pokemonDisplay.name);
-  console.log(pokemonDisplay);
-  console.log(types);
+  let dataForTable = SetUpForTables(pokemonDisplay);
+  console.log(dataForTable);
   return (
     <>
       {pokemonDisplay && (
@@ -23,7 +25,23 @@ const DataOfPokemon = ({ pokemonDisplay, types }) => {
             <img src={pokemonDisplay.sprites.front_default} />
             <img src={pokemonDisplay.sprites.front_shiny} />
           </div>
-          <TableForData pokemonDisplay={pokemonDisplay} types={types} />
+          <TableForData
+            name={pokemonDisplay.name}
+            caption={"Base Stats"}
+            types={types}
+            tableHeader={SetUpForTables(pokemonDisplay).stats}
+            data={pokemonDisplay.stats}
+            map={false}
+          />
+          <TableForData
+            name={pokemonDisplay.name}
+            caption={"Information"}
+            types={types}
+            tableHeader={SetUpForTables(pokemonDisplay).information}
+            // data={SetUpForTables(pokemonDisplay).information}
+            data={pokemonDisplay.stats}
+            map={true}
+          />
         </div>
       )}
     </>

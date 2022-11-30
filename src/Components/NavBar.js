@@ -1,14 +1,22 @@
 import React from "react";
 import "../CSS/Navbar.css";
-const NavBar = () => {
+const NavBar = ({ types }) => {
   return (
     <div className="navbar">
-      <span>PokeDex</span>
+      <span className={types ? types[0] : ""}>PokeDex</span>
       <div className="links">
-        <a href="/home">Home</a>
-        <a href="/battle">Battle</a>
-        <a href="/Build">Build</a>
-        <a href="/about">About</a>
+        <span className={types ? `linksSpan ${types[1]}` : "linksSpan"}>
+          Home
+        </span>
+        <span className={types ? `linksSpan ${types[1]}` : "linksSpan"}>
+          Battle
+        </span>
+        <span className={types ? `linksSpan ${types[1]}` : "linksSpan"}>
+          Build
+        </span>
+        <span className={types ? `linksSpan ${types[1]}` : "linksSpan"}>
+          About
+        </span>
       </div>
     </div>
   );

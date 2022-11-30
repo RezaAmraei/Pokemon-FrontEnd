@@ -5,7 +5,6 @@ import DetermineHowManyTypes from "../Utils/DetermineHowManyTypes";
 const SearchBar = ({
   pokemonForSearchBar,
   setPokemonForSearchBar,
-  pokemonDisplay,
   setPokemonDisplay,
   setTypes,
   types,

@@ -13,9 +13,9 @@
   border-bottom: white 1px solid;
 }
 
-.navbar a {
+.linksSpan {
   color: rgb(233, 233, 233);
-  font-size: 27px;
+  font-size: 27px !important;
   text-decoration: none;
   font-family: "Pokemon Solid", sans-serif;
   margin: 10px;
