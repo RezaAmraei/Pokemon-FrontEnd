@@ -4,10 +4,12 @@ import TableForData from "./TableForData";
 import UpperCaseFirstLetter from "../Utils/UpperCaseFirstLetter";
 import SplitStringInHalf from "../Utils/SplitStringInHalf";
 import SetUpForTables from "../Utils/SetUpForTables";
+import RandomMoveForPokemon from "../Utils/RandomMoveForPokemon";
 
 const DataOfPokemon = ({ pokemonDisplay, types }) => {
   let splitName = SplitStringInHalf(pokemonDisplay.name);
   let dataForTable = SetUpForTables(pokemonDisplay);
+  RandomMoveForPokemon(pokemonDisplay.moves);
   console.log(dataForTable);
   return (
     <>
