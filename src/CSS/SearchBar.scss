@@ -38,3 +38,29 @@
   font-weight: 100;
   padding: 5px 10px;
 }
+
+.searchBarMobile {
+  display: none;
+}
+
+@media (min-width: 0px) and (max-width: 750px) {
+  #searchBarHeader span {
+    font-size: 2.5vh;
+  }
+  #searchBarHeader {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .searchBarInput::placeholder {
+    font-size: 2vh;
+    content: "Test";
+  }
+  .searchBarMobile {
+    display: block;
+  }
+  .searchBarDesktop {
+    display: none;
+  }
+}

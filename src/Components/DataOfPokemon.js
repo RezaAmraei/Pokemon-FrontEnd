@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../CSS/DataOfPokemon.css";
 import TableForData from "./TableForData";
 import UpperCaseFirstLetter from "../Utils/UpperCaseFirstLetter";
 import SplitStringInHalf from "../Utils/SplitStringInHalf";
 import SetUpForTables from "../Utils/SetUpForTables";
-import RandomMoveForPokemon from "../Utils/RandomMoveForPokemon";
 
 const DataOfPokemon = ({ pokemonDisplay, types }) => {
-  let splitName = SplitStringInHalf(pokemonDisplay.name);
-  let dataForTable = SetUpForTables(pokemonDisplay);
-  RandomMoveForPokemon(pokemonDisplay.moves);
+  let splitName;
+  let dataForTable;
+
+  splitName = SplitStringInHalf(pokemonDisplay.name);
+  dataForTable = SetUpForTables(pokemonDisplay);
+
   console.log(dataForTable);
   return (
     <>
@@ -40,8 +42,7 @@ const DataOfPokemon = ({ pokemonDisplay, types }) => {
             caption={"Information"}
             types={types}
             tableHeader={SetUpForTables(pokemonDisplay).information}
-            // data={SetUpForTables(pokemonDisplay).information}
-            data={pokemonDisplay.stats}
+            data={SetUpForTables(pokemonDisplay).information}
             map={true}
           />
         </div>

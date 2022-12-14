@@ -20,10 +20,21 @@
 .tableForData tr {
   text-align: left;
 }
-.tableForData thead {
+.tableForData tbody {
   display: flex;
   justify-content: center;
 
   gap: 20px;
   font-size: 20px;
+}
+
+// .Information {
+//   display: flex;
+//   flex-direction: column;
+// }
+@media (min-width: 0px) and (max-width: 750px) {
+  .Information {
+    display: flex;
+    flex-direction: row;
+  }
 }

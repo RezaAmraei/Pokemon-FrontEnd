@@ -4,7 +4,6 @@ import "../CSS/ColumnOfPokeBalls.css";
 
 const ColumnOfPokeBalls = ({ side }) => {
   const pokeBallFunction = PokeBalls();
-
   return (
     <div className="columnForPokeBalls">
       <img

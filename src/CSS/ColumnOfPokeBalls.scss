@@ -6,5 +6,19 @@
 }
 
 .columnForPokeBalls img {
-  height: 210px;
+  height: 14vh;
+  width: 14vh;
+}
+
+@media (min-width: 0px) and (max-width: 750px) {
+  .columnForPokeBalls {
+    display: none;
+  }
+}
+
+@media (width > 1740px) {
+  .columnForPokeBalls img {
+    height: 210px;
+    width: 210px;
+  }
 }

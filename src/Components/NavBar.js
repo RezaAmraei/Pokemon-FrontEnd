@@ -1,8 +1,12 @@
 import React from "react";
 import "../CSS/Navbar.css";
+import HamburgerNavBar from "./HamburgerNavBar";
 const NavBar = ({ types }) => {
   return (
     <div className="navbar">
+      <div className="mobileMenu">
+        <HamburgerNavBar />
+      </div>
       <span className={types ? types[0] : ""}>PokeDex</span>
       <div className="links">
         <span className={types ? `linksSpan ${types[1]}` : "linksSpan"}>

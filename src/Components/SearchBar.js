@@ -20,7 +20,9 @@ const SearchBar = ({
   return (
     <div id="searchBar">
       <div id="searchBarHeader">
-        <span className={types ? `${types[0]}` : ""}>Search through </span>{" "}
+        <span className={types ? `${types[0]}` : ""}>
+          Search through &nbsp;{" "}
+        </span>
         <span className={types ? `${types[1]}` : ""}> your PokeDex!</span>
       </div>
       <div className="searchBarInputFieldAndButton">
@@ -28,7 +30,14 @@ const SearchBar = ({
           type="text"
           list="pokemon"
           placeholder="Search through Pokemon name or their ID!"
-          className="searchBarInput"
+          className="searchBarInput searchBarDesktop"
+          onChange={(e) => setPokemonForSearchBar(e.target.value)}
+        />
+        <input
+          type="text"
+          list="pokemon"
+          placeholder="Pokemon Name or ID!"
+          className="searchBarInput searchBarMobile"
           onChange={(e) => setPokemonForSearchBar(e.target.value)}
         />
         <button onClick={() => apiFunction(pokemonForSearchBar)}>Find!</button>
