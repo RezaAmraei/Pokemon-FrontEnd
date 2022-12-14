@@ -8,12 +8,13 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ListItemText from "@mui/material/ListItemText";
+import "../CSS/Navbar.css";
 
-export default function HamburgerNavBar() {
+export default function HamburgerNavBar({ types }) {
   const [state, setState] = React.useState({
     right: false,
   });
-
+  console.log(types[0]);
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -52,7 +53,7 @@ export default function HamburgerNavBar() {
       {["left"].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>
-            <MenuIcon sx={{ color: "white", fontSize: "9vh" }} />
+            <MenuIcon className={"grass"} sx={{ fontSize: "9vh" }} />
           </Button>
           <Drawer
             anchor={anchor}

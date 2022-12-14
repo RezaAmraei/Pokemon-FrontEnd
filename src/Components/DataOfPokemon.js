@@ -31,7 +31,7 @@ const DataOfPokemon = ({ pokemonDisplay, types }) => {
           </div>
           <TableForData
             name={pokemonDisplay.name}
-            caption={"Base Stats"}
+            caption={"Base_Stats"}
             types={types}
             tableHeader={SetUpForTables(pokemonDisplay).stats}
             data={pokemonDisplay.stats}

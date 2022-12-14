@@ -5,7 +5,7 @@ const NavBar = ({ types }) => {
   return (
     <div className="navbar">
       <div className="mobileMenu">
-        <HamburgerNavBar />
+        <HamburgerNavBar types={types} />
       </div>
       <span className={types ? types[0] : ""}>PokeDex</span>
       <div className="links">

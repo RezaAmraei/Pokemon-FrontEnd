@@ -1,4 +1,5 @@
 @import "../Variables/Variables.scss";
+
 .tableForData {
   color: $whiteColor;
   font-family: $pokemonFont;
@@ -14,27 +15,36 @@
   font-weight: normal;
 }
 .tableForData td {
-  display: block;
   font-family: $titleFont;
 }
 .tableForData tr {
   text-align: left;
 }
 .tableForData tbody {
-  display: flex;
-  justify-content: center;
-
   gap: 20px;
   font-size: 20px;
 }
+.Base_Stats {
+  display: flex;
+  justify-content: center;
+}
 
-// .Information {
-//   display: flex;
-//   flex-direction: column;
-// }
+.Base_Stats td,
+.Base_Stats tr {
+  display: block;
+}
+
+.table_Information {
+  margin-bottom: 5vh;
+}
 @media (min-width: 0px) and (max-width: 750px) {
   .Information {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+  }
+
+  .Information tr {
+    display: flex;
+    flex-direction: column;
   }
 }

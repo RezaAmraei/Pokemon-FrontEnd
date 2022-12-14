@@ -16,7 +16,6 @@
 }
 
 .tableForData td {
-  display: block;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -25,15 +24,31 @@
 }
 
 .tableForData tbody {
-  display: flex;
-  justify-content: center;
   gap: 20px;
   font-size: 20px;
+}
+
+.Base_Stats {
+  display: flex;
+  justify-content: center;
+}
+
+.Base_Stats td,
+.Base_Stats tr {
+  display: block;
+}
+
+.table_Information {
+  margin-bottom: 5vh;
 }
 
 @media (min-width: 0px) and (max-width: 750px) {
   .Information {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+  }
+  .Information tr {
+    display: flex;
+    flex-direction: column;
   }
 }/*# sourceMappingURL=TableForData.css.map */

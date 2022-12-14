@@ -13,38 +13,63 @@ export default function BasicTable({
   if (caption == "Information") console.log(data);
   console.log(caption);
   return (
-    <table className="tableForData">
+    <table className={`tableForData table_${caption}`}>
       <caption className={types[1]}>
-        <span className={types[0]}>{UpperCaseFirstLetter(name)}</span> {caption}
+        <span className={types[0]}>{UpperCaseFirstLetter(name)}'s</span>{" "}
+        {caption}
       </caption>
-      <tbody>
-        <tr className={`${types[0]} ${caption}`}>
-          {tableHeader.map((header, i) => {
-            return <th key={i}>{Object.keys(header)}</th>;
-          })}
-        </tr>
+      <tbody className={caption}>
+        {!map && (
+          <tr className={`${types[0]} ${caption}`}>
+            {tableHeader.map((header, i) => {
+              return <th key={i}>{Object.keys(header)}</th>;
+            })}
+          </tr>
+        )}
         {map ? (
           <>
             <tr>
-              <td>x1</td>
-              <td>x2</td>
-              <td>x3</td>
-              <td>x4</td>
-              <td>x5</td>
+              <td className={types[0]}>Type(s)</td>
+              <td className={types[1]}>{data[0]["Type(s)"][0]}</td>
+              <td className={types[1]}>
+                {data[0]["Type(s)"][1] ? (
+                  data[0]["Type(s)"][1]
+                ) : (
+                  <span> &nbsp;</span>
+                )}
+              </td>
             </tr>
             <tr>
-              <td>y1</td>
-              <td>y2</td>
-              <td>y3</td>
-              <td>y4</td>
-              <td>y5</td>
+              <td className={types[0]}>Move(s)</td>
+              <td className={types[1]}>{data[1]["Move(s)"][0]}</td>
+              <td className={types[1]}>{data[1]["Move(s)"][1]}</td>
+              <td className={types[1]}>{data[1]["Move(s)"][2]}</td>
+              <td className={types[1]}>{data[1]["Move(s)"][3]}</td>
             </tr>
             <tr>
-              <td>z1</td>
-              <td>z2</td>
-              <td>z3</td>
-              <td>z4</td>
-              <td>z5</td>
+              <td className={types[0]}>Abilitie(s)</td>
+              <td className={types[1]}>{data[2]["Abilitie(s)"][0]}</td>
+              <td className={types[1]}>
+                {data[2]["Abilitie(s)"][1] ? (
+                  data[2]["Abilitie(s)"][1]
+                ) : (
+                  <span> &nbsp;</span>
+                )}
+              </td>
+              <td className={types[1]}>
+                {data[2]["Abilitie(s)"][2] ? (
+                  data[2]["Abilitie(s)"][2]
+                ) : (
+                  <span> &nbsp;</span>
+                )}
+              </td>
+              <td className={types[1]}>
+                {data[2]["Abilitie(s)"][3] ? (
+                  data[2]["Abilitie(s)"][3]
+                ) : (
+                  <span> &nbsp;</span>
+                )}
+              </td>
             </tr>
           </>
         ) : (
@@ -58,50 +83,3 @@ export default function BasicTable({
     </table>
   );
 }
-
-/*
- <tr>
-              <td className={types[1]}>{data[0]["Type(s)"][0]}</td>
-              <td className={types[1]}>{data[1]["Move(s)"][0]}</td>
-              <td className={types[1]}>{data[2]["Abilitie(s)"][0]}</td>
-            </tr>
-            <tr>
-              <td className={types[1]}>
-                {data[0]["Type(s)"][1] ? (
-                  data[0]["Type(s)"][1]
-                ) : (
-                  <span> &nbsp;</span>
-                )}
-              </td>
-              <td className={types[1]}>{data[1]["Move(s)"][1]}</td>
-              <td className={types[1]}>
-                {data[2]["Abilitie(s)"][1] ? (
-                  data[2]["Abilitie(s)"][1]
-                ) : (
-                  <span> &nbsp;</span>
-                )}
-              </td>
-            </tr>
-            <tr>
-              <td className={types[1]}>&nbsp;</td>
-              <td className={types[1]}>{data[1]["Move(s)"][2]}</td>
-              <td className={types[1]}>
-                {data[2]["Abilitie(s)"][2] ? (
-                  data[2]["Abilitie(s)"][2]
-                ) : (
-                  <span> &nbsp;</span>
-                )}
-              </td>
-            </tr>
-            <tr>
-              <td className={types[1]}>&nbsp;</td>
-              <td className={types[1]}>{data[1]["Move(s)"][3]}</td>
-              <td className={types[1]}>
-                {data[2]["Abilitie(s)"][3] ? (
-                  data[2]["Abilitie(s)"][3]
-                ) : (
-                  <span> &nbsp;</span>
-                )}
-              </td>
-            </tr>
-*/
