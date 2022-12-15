@@ -10,4 +10,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 14vh;
+  margin-right: 14vh;
+}
+
+@media (min-width: 0px) and (max-width: 750px) {
+  .middleColumn {
+    margin: 0;
+  }
 }/*# sourceMappingURL=Main.css.map */

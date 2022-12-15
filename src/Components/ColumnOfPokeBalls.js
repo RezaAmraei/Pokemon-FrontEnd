@@ -1,11 +1,12 @@
 import React from "react";
 import PokeBalls from "../Utils/PokeBalls";
 import "../CSS/ColumnOfPokeBalls.css";
+import { sliderClasses } from "@mui/material";
 
 const ColumnOfPokeBalls = ({ side }) => {
   const pokeBallFunction = PokeBalls();
   return (
-    <div className="columnForPokeBalls">
+    <div className={`columnForPokeBalls ${side}`}>
       <img
         src={pokeBallFunction[side].first.url}
         alt={pokeBallFunction[side].first.alt}

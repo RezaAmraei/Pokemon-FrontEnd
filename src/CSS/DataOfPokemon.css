@@ -23,4 +23,14 @@
   .dataOfPokemonImages img {
     height: 40vw;
   }
+}
+@media (min-width: 751px) and (max-width: 1150px) {
+  .dataOfPokemonImages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dataOfPokemonImages img {
+    height: 30vw;
+  }
 }/*# sourceMappingURL=DataOfPokemon.css.map */

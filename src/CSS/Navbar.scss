@@ -13,22 +13,19 @@
   align-items: center;
   border-bottom: white 1px solid;
 }
-
-.linksSpan {
-  color: $whiteColor;
-  font-size: 30px !important;
-
-  text-decoration: none;
-
-  font-family: $pokemonFont;
-  margin: 10px;
-}
-
 .navbar span {
   color: $whiteColor;
   font-family: $pokemonFont;
   font-size: 60px;
   margin-bottom: 15px;
+}
+.linksSpan {
+  color: $whiteColor;
+  font-size: 30px !important;
+  text-decoration: none;
+
+  font-family: $pokemonFont;
+  margin: 10px;
 }
 
 .links {
@@ -36,6 +33,10 @@
 }
 .mobileMenu {
   display: none;
+}
+.test {
+  background-color: red !important;
+  color: red !important;
 }
 @media (min-width: 0px) and (max-width: 750px) {
   .navbar span {
@@ -57,7 +58,14 @@
     display: contents;
   }
 }
-
+@media (min-width: 751px) and (max-width: 1150px) {
+  .linksSpan {
+    font-size: 2.5vw !important;
+  }
+  .navbar span {
+    font-size: 5vw;
+  }
+}
 @media (width > 1740px) {
   .columnForPokeBalls img {
     height: 210px;

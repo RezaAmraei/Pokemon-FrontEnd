@@ -85,4 +85,18 @@
   .searchBarDesktop {
     display: none;
   }
+}
+@media (min-width: 751px) and (max-width: 1150px) {
+  #searchBarHeader {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .searchBarMobile {
+    display: block;
+  }
+  .searchBarDesktop {
+    display: none;
+  }
 }/*# sourceMappingURL=SearchBar.css.map */

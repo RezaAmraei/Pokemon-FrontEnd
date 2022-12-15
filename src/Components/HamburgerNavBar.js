@@ -14,7 +14,7 @@ export default function HamburgerNavBar({ types }) {
   const [state, setState] = React.useState({
     right: false,
   });
-  console.log(types[0]);
+
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -53,7 +53,10 @@ export default function HamburgerNavBar({ types }) {
       {["left"].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>
-            <MenuIcon className={"grass"} sx={{ fontSize: "9vh" }} />
+            <MenuIcon
+              className={types ? types[0] : "white"}
+              sx={{ fontSize: "9vh" }}
+            />
           </Button>
           <Drawer
             anchor={anchor}

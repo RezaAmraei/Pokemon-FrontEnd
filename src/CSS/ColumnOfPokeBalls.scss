@@ -3,11 +3,19 @@
   flex-direction: column;
   justify-content: space-between;
   height: 97vh;
+  // position: fixed;
 }
 
+.left {
+  position: fixed;
+}
+.right {
+  position: fixed;
+  right: 0;
+}
 .columnForPokeBalls img {
-  height: 14vh;
-  width: 14vh;
+  height: 13.5vh;
+  width: 13.5vh;
 }
 
 @media (min-width: 0px) and (max-width: 750px) {

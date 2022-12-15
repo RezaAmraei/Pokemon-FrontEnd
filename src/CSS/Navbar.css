@@ -13,6 +13,13 @@
   border-bottom: white 1px solid;
 }
 
+.navbar span {
+  color: rgb(233, 233, 233);
+  font-family: "Pokemon Solid", sans-serif;
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
 .linksSpan {
   color: rgb(233, 233, 233);
   font-size: 30px !important;
@@ -21,19 +28,17 @@
   margin: 10px;
 }
 
-.navbar span {
-  color: rgb(233, 233, 233);
-  font-family: "Pokemon Solid", sans-serif;
-  font-size: 60px;
-  margin-bottom: 15px;
-}
-
 .links {
   margin-top: 20px;
 }
 
 .mobileMenu {
   display: none;
+}
+
+.test {
+  background-color: red !important;
+  color: red !important;
 }
 
 @media (min-width: 0px) and (max-width: 750px) {
@@ -53,6 +58,14 @@
   }
   .mobileMenu {
     display: contents;
+  }
+}
+@media (min-width: 751px) and (max-width: 1150px) {
+  .linksSpan {
+    font-size: 2.5vw !important;
+  }
+  .navbar span {
+    font-size: 5vw;
   }
 }
 @media (width > 1740px) {
