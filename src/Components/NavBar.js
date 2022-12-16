@@ -1,7 +1,14 @@
 import React from "react";
 import "../CSS/Navbar.css";
 import HamburgerNavBar from "./HamburgerNavBar";
+import { useNavigate } from "react-router-dom";
+
 const NavBar = ({ types }) => {
+  const navigate = useNavigate();
+  function navbarLinks(link) {
+    console.log("this function was called");
+    navigate(`/${link}`);
+  }
   return (
     <div className="navbar">
       <div className="mobileMenu">
@@ -9,16 +16,28 @@ const NavBar = ({ types }) => {
       </div>
       <span className={types ? types[0] : ""}>PokeDex</span>
       <div className="links">
-        <span className={types ? `linksSpan ${types[1]}` : "linksSpan"}>
+        <span
+          className={types ? `linksSpan ${types[1]}` : "linksSpan"}
+          onClick={() => navbarLinks("/")}
+        >
           Home
         </span>
-        <span className={types ? `linksSpan ${types[1]}` : "linksSpan"}>
+        <span
+          className={types ? `linksSpan ${types[1]}` : "linksSpan"}
+          onClick={() => navbarLinks("battle")}
+        >
           Battle
         </span>
-        <span className={types ? `linksSpan ${types[1]}` : "linksSpan"}>
+        <span
+          className={types ? `linksSpan ${types[1]}` : "linksSpan"}
+          onClick={() => navbarLinks("build")}
+        >
           Build
         </span>
-        <span className={types ? `linksSpan ${types[1]}` : "linksSpan"}>
+        <span
+          className={types ? `linksSpan ${types[1]}` : "linksSpan"}
+          onClick={() => navbarLinks("about")}
+        >
           About
         </span>
       </div>
