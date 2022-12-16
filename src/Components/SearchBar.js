@@ -2,13 +2,9 @@ import React, { useState } from "react";
 import "../CSS/SearchBar.css";
 import PokeAPIFunction from "../Utils/PokeAPIFunction";
 import DetermineHowManyTypes from "../Utils/DetermineHowManyTypes";
-const SearchBar = ({
-  pokemonForSearchBar,
-  setPokemonForSearchBar,
-  setPokemonDisplay,
-  setTypes,
-  types,
-}) => {
+const SearchBar = ({ setPokemonDisplay, setTypes, types }) => {
+  const [pokemonForSearchBar, setPokemonForSearchBar] = useState("");
+
   const apiFunction = async function (pokemon) {
     console.log(await PokeAPIFunction("pokemon", pokemon));
     let pokemonTest = await PokeAPIFunction("pokemon", pokemon);

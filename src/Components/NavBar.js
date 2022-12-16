@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 const NavBar = ({ types }) => {
   const navigate = useNavigate();
   function navbarLinks(link) {
-    console.log("this function was called");
     navigate(`/${link}`);
   }
   return (

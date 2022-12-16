@@ -5,7 +5,6 @@ import NavBar from "../Components/NavBar";
 import SearchBar from "../Components/SearchBar";
 import "../CSS/Main.css";
 const Main = () => {
-  const [pokemonForSearchBar, setPokemonForSearchBar] = useState("");
   const [pokemonDisplay, setPokemonDisplay] = useState(null);
   const [types, setTypes] = useState(null);
   return (
@@ -14,8 +13,6 @@ const Main = () => {
       <div className="middleColumn">
         <NavBar types={types} />
         <SearchBar
-          pokemonForSearchBar={pokemonForSearchBar}
-          setPokemonForSearchBar={setPokemonForSearchBar}
           setPokemonDisplay={setPokemonDisplay}
           setTypes={setTypes}
           types={types}

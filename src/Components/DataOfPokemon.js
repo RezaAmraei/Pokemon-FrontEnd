@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../CSS/DataOfPokemon.css";
 import TableForData from "./TableForData";
 import UpperCaseFirstLetter from "../Utils/UpperCaseFirstLetter";
