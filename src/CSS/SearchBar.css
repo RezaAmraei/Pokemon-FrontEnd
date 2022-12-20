@@ -6,6 +6,10 @@
   align-items: center;
 }
 
+#searchBarHeader {
+  width: 100%;
+}
+
 #searchBarHeader span {
   color: rgb(233, 233, 233);
   font-size: 40px;

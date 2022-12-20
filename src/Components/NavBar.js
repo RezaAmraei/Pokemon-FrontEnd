@@ -17,7 +17,7 @@ const NavBar = ({ types }) => {
       <div className="links">
         <span
           className={types ? `linksSpan ${types[1]}` : "linksSpan"}
-          onClick={() => navbarLinks("/")}
+          onClick={() => navbarLinks("")}
         >
           Home
         </span>

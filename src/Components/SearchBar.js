@@ -7,10 +7,9 @@ const SearchBar = ({ setPokemonDisplay, setTypes, types }) => {
 
   const apiFunction = async function (pokemon) {
     console.log(await PokeAPIFunction("pokemon", pokemon));
-    let pokemonTest = await PokeAPIFunction("pokemon", pokemon);
-
+    const pokemonTest = await PokeAPIFunction("pokemon", pokemon);
     setPokemonDisplay(pokemonTest);
-    let typesFunctionResult = DetermineHowManyTypes(pokemonTest);
+    const typesFunctionResult = DetermineHowManyTypes(pokemonTest);
     setTypes([typesFunctionResult[0], typesFunctionResult[1]]);
   };
   return (

@@ -21,3 +21,10 @@
     margin: 0;
   }
 }
+
+@media (width > 1740px) {
+  .middleColumn {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
