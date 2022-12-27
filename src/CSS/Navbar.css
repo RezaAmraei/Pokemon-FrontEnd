@@ -28,6 +28,11 @@
   margin: 10px;
 }
 
+.linksSpan:hover {
+  cursor: pointer;
+  filter: brightness(75%);
+}
+
 .links {
   margin-top: 20px;
 }

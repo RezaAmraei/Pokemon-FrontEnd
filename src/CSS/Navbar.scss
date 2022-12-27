@@ -23,9 +23,12 @@
   color: $whiteColor;
   font-size: 30px !important;
   text-decoration: none;
-
   font-family: $pokemonFont;
   margin: 10px;
+}
+.linksSpan:hover {
+  cursor: pointer;
+  filter: brightness(75%);
 }
 
 .links {

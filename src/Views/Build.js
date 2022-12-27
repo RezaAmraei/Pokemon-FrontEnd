@@ -7,7 +7,7 @@ const Build = () => {
   const [pokemonDisplay, setPokemonDisplay] = useState(null);
   const [types, setTypes] = useState(null);
   return (
-    <div id="build">
+    <div className="mainPage">
       <ColumnOfPokeBalls side="left" />
       <div className="middleColumn">
         <NavBar types={types} />
