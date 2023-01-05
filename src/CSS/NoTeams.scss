@@ -1,0 +1,88 @@
+@import "../Variables/Variables.scss";
+
+.noTeamsFont {
+  font-family: $pokemonFont;
+  color: $whiteColor;
+  text-align: center;
+}
+.noTeamsHeader {
+  font-size: 40px;
+}
+
+.noTeamsStartBuilding {
+  font-size: 25px;
+}
+
+.noTeamsStartBuilding:hover {
+  cursor: pointer;
+}
+.noTeams {
+  margin-top: 100px;
+}
+
+.noTeamCreateButton {
+  display: none;
+}
+.noTeamCreateButton:hover {
+  cursor: pointer;
+}
+@media (min-width: 0px) and (max-width: 750px) {
+  .noTeams {
+    padding: 15px;
+    margin-top: 50px;
+  }
+  .noTeamsHeader {
+    font-size: 25px;
+  }
+
+  .noTeamsStartBuilding {
+    font-size: 18px;
+  }
+  .noTeamCreateButton {
+    display: block;
+    font-family: $pokemonFont;
+    font-size: 22px;
+    color: $backgroundColor;
+    background-color: $whiteColor;
+    border-radius: 25px;
+    padding: 0px 15px 20px 15px;
+    height: 80px;
+    margin-top: 20px;
+  }
+  .noTeamCreateButtonDiv {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 1150px) {
+  .noTeamCreateButton {
+    display: block;
+    font-family: $pokemonFont;
+    font-size: 22px;
+    color: $backgroundColor;
+    background-color: $whiteColor;
+    border-radius: 25px;
+    padding: 0px 15px 20px 15px;
+    height: 80px;
+    margin-top: 20px;
+  }
+  .noTeamCreateButtonDiv {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .noTeams {
+    padding: 15px;
+    margin-top: 100px;
+  }
+  .noTeamsHeader {
+    font-size: 33px;
+  }
+  .noTeamsStartBuilding {
+    font-size: 22px;
+  }
+}

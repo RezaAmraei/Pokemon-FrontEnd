@@ -1,0 +1,11 @@
+@import "../Variables/Variables.scss";
+
+.createTeamFont {
+  font-family: $pokemonFont;
+  font-size: 30px;
+  color: $whiteColor;
+}
+.createTeamHeader {
+  font-size: 50px;
+  letter-spacing: 0.07em;
+}

@@ -1,29 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import ColumnOfPokeBalls from "../Components/ColumnOfPokeBalls";
 import NavBar from "../Components/NavBar";
 import SearchBar from "../Components/SearchBar";
 import "../CSS/Main.css";
-import NoTeams from "../Components/Build/NoTeams";
+import "../CSS/Create-Team.css";
 
-const Build = () => {
-  localStorage.setItem("test", undefined);
-  if (localStorage.getItem("test")) console.log(true);
-  else console.log(false);
-
+const Create = () => {
   return (
     <div className="mainPage">
       <ColumnOfPokeBalls side="left" />
       <div className="middleColumn">
         <NavBar />
-        {localStorage.getItem("teams") ? (
-          <div> Heres your team </div>
-        ) : (
-          <NoTeams />
-        )}
+        <span className="createTeamFont createTeamHeader">Pick your team!</span>
       </div>
       <ColumnOfPokeBalls side="right" />
     </div>
   );
 };
 
-export default Build;
+export default Create;

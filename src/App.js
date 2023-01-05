@@ -1,8 +1,9 @@
-import "./App.css";
+import React from "react";
 import Main from "./Views/Main";
 import Build from "./Views/Build.js";
-import React from "react";
+import Create from "./Views/Create";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route exact path="/build" element={<Build />} />
+          <Route exact path="/create-team" element={<Create />} />
         </Routes>
       </BrowserRouter>
     </div>
