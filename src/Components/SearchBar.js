@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../CSS/SearchBar.css";
 import PokeAPIFunction from "../Utils/PokeAPIFunction";
 import DetermineHowManyTypes from "../Utils/DetermineHowManyTypes";
-const SearchBar = ({ setPokemonDisplay, setTypes, types }) => {
+const SearchBar = ({ setPokemonDisplay, setTypes, types, home = true }) => {
   const [pokemonForSearchBar, setPokemonForSearchBar] = useState("");
 
   const apiFunction = async function (pokemon) {
@@ -12,14 +12,17 @@ const SearchBar = ({ setPokemonDisplay, setTypes, types }) => {
     const typesFunctionResult = DetermineHowManyTypes(pokemonTest);
     setTypes([typesFunctionResult[0], typesFunctionResult[1]]);
   };
+  console.log(home);
   return (
     <div id="searchBar">
-      <div id="searchBarHeader">
-        <span className={types ? `${types[0]}` : ""}>
-          Search through &nbsp;{" "}
-        </span>
-        <span className={types ? `${types[1]}` : ""}> your PokeDex!</span>
-      </div>
+      {home && (
+        <div id="searchBarHeader">
+          <span className={types ? `${types[0]}` : ""}>
+            Search through &nbsp;{" "}
+          </span>
+          <span className={types ? `${types[1]}` : ""}> your PokeDex!</span>
+        </div>
+      )}
       <div className="searchBarInputFieldAndButton">
         <input
           type="text"

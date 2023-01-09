@@ -8,4 +8,42 @@
 .createTeamHeader {
   font-size: 50px;
   letter-spacing: 0.07em;
+  text-align: center;
+}
+.createTeamButton {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: $backgroundColor;
+  border-radius: 20px;
+  padding: 2px 15px;
+  font-family: $titleFont;
+  margin-top: 20px;
+}
+.createTeamButton span {
+  font-weight: bolder;
+  font-size: 35px;
+  color: black;
+  margin-right: 5px;
+}
+
+.createTeamButton:hover {
+  cursor: pointer;
+}
+.createTeamMiddleCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (min-width: 0px) and (max-width: 750px) {
+  .createTeamHeader {
+    font-size: 30px;
+    margin-top: 50px;
+  }
+}
+@media (min-width: 751px) and (max-width: 1150px) {
 }
