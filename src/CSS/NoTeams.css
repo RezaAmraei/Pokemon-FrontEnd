@@ -41,13 +41,13 @@
   }
   .noTeamCreateButton {
     display: block;
-    font-family: "Pokemon Solid", sans-serif;
-    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
     color: rgb(56, 56, 56);
     background-color: rgb(233, 233, 233);
     border-radius: 25px;
-    padding: 0px 15px 20px 15px;
-    height: 80px;
+    padding: 5px 10px;
     margin-top: 20px;
   }
   .noTeamCreateButtonDiv {
@@ -60,13 +60,12 @@
 @media (min-width: 751px) and (max-width: 1150px) {
   .noTeamCreateButton {
     display: block;
-    font-family: "Pokemon Solid", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
     color: rgb(56, 56, 56);
     background-color: rgb(233, 233, 233);
     border-radius: 25px;
-    padding: 0px 15px 20px 15px;
-    height: 80px;
+    padding: 5px 10px;
     margin-top: 20px;
   }
   .noTeamCreateButtonDiv {

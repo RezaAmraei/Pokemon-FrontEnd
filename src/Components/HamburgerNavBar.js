@@ -8,9 +8,18 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ListItemText from "@mui/material/ListItemText";
+import { useNavigate } from "react-router-dom";
 import "../CSS/Navbar.css";
 
 export default function HamburgerNavBar({ types }) {
+  const navigate = useNavigate();
+  function linksNav(text) {
+    if (text == "Home") {
+      navigate("/");
+      return;
+    }
+    navigate(`/${text}`);
+  }
   const [state, setState] = React.useState({
     right: false,
   });
@@ -39,7 +48,7 @@ export default function HamburgerNavBar({ types }) {
         {["X", "Home", "Battle", "Build", "About"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
-              <ListItemText primary={text} />
+              <ListItemText primary={text} onClick={() => linksNav(text)} />
             </ListItemButton>
           </ListItem>
         ))}

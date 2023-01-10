@@ -40,13 +40,13 @@
   }
   .noTeamCreateButton {
     display: block;
-    font-family: $pokemonFont;
-    font-size: 22px;
+    font-family: $titleFont;
+    font-size: 15px;
+    font-weight: bold;
     color: $backgroundColor;
     background-color: $whiteColor;
     border-radius: 25px;
-    padding: 0px 15px 20px 15px;
-    height: 80px;
+    padding: 5px 10px;
     margin-top: 20px;
   }
   .noTeamCreateButtonDiv {
@@ -60,13 +60,12 @@
 @media (min-width: 751px) and (max-width: 1150px) {
   .noTeamCreateButton {
     display: block;
-    font-family: $pokemonFont;
+    font-family: $titleFont;
     font-size: 22px;
     color: $backgroundColor;
     background-color: $whiteColor;
     border-radius: 25px;
-    padding: 0px 15px 20px 15px;
-    height: 80px;
+    padding: 5px 10px;
     margin-top: 20px;
   }
   .noTeamCreateButtonDiv {

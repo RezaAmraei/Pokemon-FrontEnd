@@ -2,15 +2,27 @@ import React, { useState } from "react";
 import "../CSS/SearchBar.css";
 import PokeAPIFunction from "../Utils/PokeAPIFunction";
 import DetermineHowManyTypes from "../Utils/DetermineHowManyTypes";
-const SearchBar = ({ setPokemonDisplay, setTypes, types, home = true }) => {
+const SearchBar = ({
+  setPokemonDisplay,
+  setTypes,
+  types,
+  home = true,
+  setAddPokemon = null,
+}) => {
   const [pokemonForSearchBar, setPokemonForSearchBar] = useState("");
 
   const apiFunction = async function (pokemon) {
     console.log(await PokeAPIFunction("pokemon", pokemon));
     const pokemonTest = await PokeAPIFunction("pokemon", pokemon);
-    setPokemonDisplay(pokemonTest);
-    const typesFunctionResult = DetermineHowManyTypes(pokemonTest);
-    setTypes([typesFunctionResult[0], typesFunctionResult[1]]);
+    if (home) {
+      const typesFunctionResult = DetermineHowManyTypes(pokemonTest);
+      setPokemonDisplay(pokemonTest);
+      setTypes([typesFunctionResult[0], typesFunctionResult[1]]);
+      console.log("test worked");
+    } else {
+      console.log("this line has hit");
+      return pokemonTest;
+    }
   };
   console.log(home);
   return (

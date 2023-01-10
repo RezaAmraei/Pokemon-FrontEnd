@@ -8,6 +8,7 @@ import AddIcon from "@mui/icons-material/Add";
 
 const Create = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [addPokemon, setAddPokemon] = useState({});
   return (
     <div className="mainPage">
       <ColumnOfPokeBalls side="left" />
@@ -16,7 +17,9 @@ const Create = () => {
         <span className="createTeamFont createTeamHeader">Pick your team!</span>
 
         <div className="createTeamMiddleCol">
-          {buttonClicked && <SearchBar home={false} />}
+          {buttonClicked && (
+            <SearchBar home={false} setAddPokemon={setAddPokemon} />
+          )}
           <button
             className="createTeamButton"
             onClick={() => setButtonClicked(true)}
