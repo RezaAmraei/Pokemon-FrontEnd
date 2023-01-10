@@ -8,16 +8,18 @@
   font-size: 50px;
   letter-spacing: 0.07em;
   text-align: center;
+  margin-top: 125px;
 }
 
 .createTeamButton {
-  font-size: 20px;
+  font-size: 15px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   text-align: center;
   color: rgb(56, 56, 56);
   border-radius: 20px;
-  padding: 2px 15px;
+  padding: 2px 10px;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 20px;
 }
@@ -43,7 +45,7 @@
 
 @media (min-width: 0px) and (max-width: 750px) {
   .createTeamHeader {
-    font-size: 30px;
+    font-size: 33px;
     margin-top: 50px;
   }
 }/*# sourceMappingURL=Create-Team.css.map */

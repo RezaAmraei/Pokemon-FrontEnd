@@ -4,11 +4,11 @@ import NavBar from "../Components/NavBar";
 import SearchBar from "../Components/SearchBar";
 import "../CSS/Main.css";
 import "../CSS/Create-Team.css";
-import AddIcon from "@mui/icons-material/Add";
+import PokeMonChecker from "../Components/Build/PokeMonChecker";
 
 const Create = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
-  const [addPokemon, setAddPokemon] = useState({});
+  const [addPokemon, setAddPokemon] = useState(null);
   return (
     <div className="mainPage">
       <ColumnOfPokeBalls side="left" />
@@ -20,6 +20,7 @@ const Create = () => {
           {buttonClicked && (
             <SearchBar home={false} setAddPokemon={setAddPokemon} />
           )}
+          {addPokemon && <PokeMonChecker addPokemon={addPokemon} />}
           <button
             className="createTeamButton"
             onClick={() => setButtonClicked(true)}

@@ -18,10 +18,8 @@ const SearchBar = ({
       const typesFunctionResult = DetermineHowManyTypes(pokemonTest);
       setPokemonDisplay(pokemonTest);
       setTypes([typesFunctionResult[0], typesFunctionResult[1]]);
-      console.log("test worked");
     } else {
-      console.log("this line has hit");
-      return pokemonTest;
+      setAddPokemon(pokemonTest);
     }
   };
   console.log(home);
