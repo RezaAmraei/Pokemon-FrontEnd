@@ -20,14 +20,6 @@
   margin-top: 100px;
 }
 
-.noTeamCreateButton {
-  display: none;
-}
-
-.noTeamCreateButton:hover {
-  cursor: pointer;
-}
-
 @media (min-width: 0px) and (max-width: 750px) {
   .noTeams {
     padding: 15px;
@@ -39,17 +31,6 @@
   .noTeamsStartBuilding {
     font-size: 18px;
   }
-  .noTeamCreateButton {
-    display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    color: rgb(56, 56, 56);
-    background-color: rgb(233, 233, 233);
-    border-radius: 25px;
-    padding: 5px 10px;
-    margin-top: 20px;
-  }
   .noTeamCreateButtonDiv {
     display: flex;
     width: 100%;
@@ -58,16 +39,6 @@
   }
 }
 @media (min-width: 751px) and (max-width: 1150px) {
-  .noTeamCreateButton {
-    display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 22px;
-    color: rgb(56, 56, 56);
-    background-color: rgb(233, 233, 233);
-    border-radius: 25px;
-    padding: 5px 10px;
-    margin-top: 20px;
-  }
   .noTeamCreateButtonDiv {
     display: flex;
     width: 100%;

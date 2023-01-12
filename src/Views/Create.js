@@ -3,11 +3,10 @@ import ColumnOfPokeBalls from "../Components/ColumnOfPokeBalls";
 import NavBar from "../Components/NavBar";
 import SearchBar from "../Components/SearchBar";
 import EditPokemon from "../Components/Build/EditPokemon/EditPokemon";
-
 import "../CSS/Main.css";
 import "../CSS/Create-Team.css";
 import PokeMonChecker from "../Components/Build/PokeMonChecker";
-import ChartForStats from "../Components/Build/ChartForStats";
+import Button from "../Components/Button/Button";
 
 const Create = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -31,12 +30,12 @@ const Create = () => {
             />
           )}
           {!buttonClicked && (
-            <button
-              className="createTeamButton"
+            <Button
+              text={"Add Pokemon"}
+              secondaryText={"+"}
+              buttonClassName={"pokemonButton"}
               onClick={() => setButtonClicked(true)}
-            >
-              <span>+</span> Add Pokemon
-            </button>
+            />
           )}
           {addPokemon && <EditPokemon addPokemon={addPokemon} />}
         </div>

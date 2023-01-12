@@ -1,0 +1,53 @@
+.pokemonButton {
+  font-size: 17px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: rgb(56, 56, 56);
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+}
+
+.pokemonButton span {
+  font-weight: bolder;
+  font-size: 35px;
+  color: black;
+  margin-right: 5px;
+}
+
+.buttonCreateTeam {
+  display: none;
+}
+
+.buttonCreateTeam:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 0px) and (max-width: 750px) {
+  .buttonCreateTeam {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(56, 56, 56);
+    background-color: rgb(233, 233, 233);
+    border-radius: 25px;
+    padding: 5px 10px;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 751px) and (max-width: 1150px) {
+  .buttonCreateTeam {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: rgb(56, 56, 56);
+    background-color: rgb(233, 233, 233);
+    border-radius: 25px;
+    padding: 5px 10px;
+    margin-top: 20px;
+  }
+}/*# sourceMappingURL=Button.css.map */

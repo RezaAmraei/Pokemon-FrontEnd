@@ -1,6 +1,8 @@
 import React from "react";
 import "../../CSS/NoTeams.css";
 import { useNavigate } from "react-router-dom";
+import Button from "../Button/Button";
+
 const NoTeams = () => {
   const navigate = useNavigate();
   function createTeam() {
@@ -15,10 +17,12 @@ const NoTeams = () => {
         Click here to start building a team
       </div>
 
-      <div className="noTeamCreateButtonDiv">
-        <button className="noTeamCreateButton " onClick={createTeam}>
-          Create Team
-        </button>
+      <div className="noTeamCreateButtonDiv" onClick={createTeam}>
+        <Button
+          className="noTeamCreateButton"
+          text={"Create Team"}
+          buttonClassName={"buttonCreateTeam"}
+        />
       </div>
     </div>
   );
