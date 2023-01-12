@@ -4,6 +4,16 @@ import ChartForStats from "../ChartForStats";
 import "./EditPokemon.css";
 
 const EditPokemon = ({ addPokemon }) => {
+  console.log(addPokemon);
+
+  let pokemonStats = [
+    addPokemon.stats[0].base_stat,
+    addPokemon.stats[1].base_stat,
+    addPokemon.stats[2].base_stat,
+    addPokemon.stats[3].base_stat,
+    addPokemon.stats[4].base_stat,
+    addPokemon.stats[5].base_stat,
+  ];
   return (
     <div className="editPokemon">
       <div className="editPokemonTopRow">
@@ -21,7 +31,7 @@ const EditPokemon = ({ addPokemon }) => {
           <input />
         </div>
         <div className="editPokemonGraphOfStats">
-          <ChartForStats />
+          <ChartForStats pokemonStats={pokemonStats} />
         </div>
       </div>
       <div className="editPokemonMiddleRow">

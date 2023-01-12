@@ -9,63 +9,64 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { StatData } from "../../Utils/DataForStatsChart";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
-const labels = ["HP", "Atk", "Def", "SpA", "SpD", "Spe"];
+const ChartForStats = ({ pokemonStats }) => {
+  ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title,
+    Tooltip,
+    Legend
+  );
+  const labels = ["HP", "Atk", "Def", "SpA", "SpD", "Spe"];
 
-export const options = {
-  indexAxis: "y",
-  elements: {
-    bar: {
-      borderWidth: 2,
+  const options = {
+    indexAxis: "y",
+    elements: {
+      bar: {
+        borderWidth: 2,
+      },
     },
-  },
-  responsive: true,
-  plugins: {
-    legend: {
-      display: false,
-    },
-    title: {
-      display: true,
-      text: "Stats",
-      color: "rgb(233, 233, 233)",
-    },
-  },
-  maintainAspectRatio: false,
-  scales: {
-    y: {
-      ticks: {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      title: {
+        display: true,
+        text: "Stats",
         color: "rgb(233, 233, 233)",
       },
     },
-    x: {
-      ticks: {
-        color: "rgb(233, 233, 233)",
+    maintainAspectRatio: false,
+
+    scales: {
+      y: {
+        ticks: {
+          color: "rgb(233, 233, 233)",
+        },
+      },
+      x: {
+        ticks: {
+          color: "rgb(233, 233, 233)",
+        },
+        max: 300,
       },
     },
-  },
-};
+  };
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      data: labels.map(() => Math.floor(Math.random() * 319)),
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-    },
-  ],
-};
+  const data = {
+    labels,
+    datasets: [
+      {
+        data: pokemonStats.map((stat) => stat),
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+    ],
+  };
 
-const ChartForStats = ({ test }) => {
   return <Bar data={data} options={options} />;
 };
 
