@@ -4,8 +4,11 @@ import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import UpperCaseFirstLetter from "../../Utils/UpperCaseFirstLetter";
 
-const PokeMonChecker = ({ addPokemon }) => {
-  console.log(addPokemon.sprites.front_default);
+const PokeMonChecker = ({ addPokemon, setButtonClicked, setAddPokemon }) => {
+  function cancelButton() {
+    setAddPokemon(null);
+    setButtonClicked(false);
+  }
   return (
     <div className="pokeMonChecker ">
       <div className="pokeMonCheckerImage">
@@ -35,6 +38,7 @@ const PokeMonChecker = ({ addPokemon }) => {
               borderRadius: "25px",
               padding: "1px",
             }}
+            onClick={cancelButton}
           />
         </div>
       </div>

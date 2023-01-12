@@ -1,0 +1,33 @@
+@import "../../../Variables/Variables.scss";
+
+.editPokemon {
+  width: 100%;
+  border: 1px solid $whiteColor;
+}
+
+.editPokemonTopRow {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editPokemonImage {
+  height: 150px;
+}
+
+.editPokemonTopRowMoves {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.editPokemonTopRowMoves span {
+  text-align: center;
+  color: $whiteColor;
+  font-weight: bold;
+}
+.editPokemonGraphOfStats {
+  height: 185px;
+  width: 250px;
+}
