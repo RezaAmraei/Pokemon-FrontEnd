@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.searchBarFindButton:hover {
+  cursor: pointer;
+}
+
 #searchBarHeader {
   width: 100%;
 }

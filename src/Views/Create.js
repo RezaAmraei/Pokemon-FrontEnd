@@ -30,12 +30,13 @@ const Create = () => {
             />
           )}
           {!buttonClicked && (
-            <Button
-              text={"Add Pokemon"}
-              secondaryText={"+"}
-              buttonClassName={"pokemonButton"}
-              onClick={() => setButtonClicked(true)}
-            />
+            <div onClick={() => setButtonClicked(true)}>
+              <Button
+                text={"Add Pokemon"}
+                secondaryText={"+"}
+                buttonClassName={"pokemonButton"}
+              />
+            </div>
           )}
           {addPokemon && <EditPokemon addPokemon={addPokemon} />}
         </div>

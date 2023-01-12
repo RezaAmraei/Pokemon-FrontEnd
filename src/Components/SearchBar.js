@@ -48,7 +48,12 @@ const SearchBar = ({
           className="searchBarInput searchBarMobile"
           onChange={(e) => setPokemonForSearchBar(e.target.value)}
         />
-        <button onClick={() => apiFunction(pokemonForSearchBar)}>Find!</button>
+        <button
+          className="searchBarFindButton"
+          onClick={() => apiFunction(pokemonForSearchBar)}
+        >
+          Find!
+        </button>
       </div>
     </div>
   );

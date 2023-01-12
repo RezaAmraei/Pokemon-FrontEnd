@@ -12,6 +12,9 @@
   font-family: $titleFont;
   margin-top: 20px;
 }
+.pokemonButton:hover {
+  cursor: pointer;
+}
 .pokemonButton span {
   font-weight: bolder;
   font-size: 35px;
