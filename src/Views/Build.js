@@ -7,8 +7,6 @@ import NoTeams from "../Components/Build/NoTeams";
 
 const Build = () => {
   localStorage.setItem("test", undefined);
-  if (localStorage.getItem("test")) console.log(true);
-  else console.log(false);
 
   return (
     <div className="mainPage">

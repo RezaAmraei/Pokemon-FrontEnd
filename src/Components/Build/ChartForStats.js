@@ -19,7 +19,7 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
+const labels = ["HP", "Atk", "Def", "SpA", "SpD", "Spe"];
 
 export const options = {
   indexAxis: "y",
@@ -35,7 +35,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: "Chart.js Horizontal Bar Chart",
+      text: "Stats",
       color: "rgb(233, 233, 233)",
     },
   },
@@ -58,15 +58,16 @@ export const data = {
   labels,
   datasets: [
     {
-      data: labels.map(() => Math.floor(Math.random() * 1001)),
+      data: labels.map(() => Math.floor(Math.random() * 319)),
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 99, 132, 0.5)",
     },
   ],
 };
 
-const ChartForStats = () => {
+const ChartForStats = ({ test }) => {
   return <Bar data={data} options={options} />;
 };
 
 export default ChartForStats;
+// every 4 evs give plus one to the stat

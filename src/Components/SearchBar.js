@@ -22,7 +22,7 @@ const SearchBar = ({
       setAddPokemon(pokemonTest);
     }
   };
-  console.log(home);
+
   return (
     <div id="searchBar">
       {home && (

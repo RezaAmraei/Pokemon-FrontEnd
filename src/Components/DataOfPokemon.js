@@ -11,8 +11,6 @@ const DataOfPokemon = ({ pokemonDisplay, types }) => {
 
   splitName = SplitStringInHalf(pokemonDisplay.name);
   dataForTable = SetUpForTables(pokemonDisplay);
-
-  console.log(dataForTable);
   return (
     <>
       {pokemonDisplay && (

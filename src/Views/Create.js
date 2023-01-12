@@ -11,6 +11,9 @@ import Button from "../Components/Button/Button";
 const Create = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [addPokemon, setAddPokemon] = useState(null);
+  function clickButton() {
+    setButtonClicked(true);
+  }
   return (
     <div className="mainPage">
       <ColumnOfPokeBalls side="left" />
@@ -30,13 +33,12 @@ const Create = () => {
             />
           )}
           {!buttonClicked && (
-            <div onClick={() => setButtonClicked(true)}>
-              <Button
-                text={"Add Pokemon"}
-                secondaryText={"+"}
-                buttonClassName={"pokemonButton"}
-              />
-            </div>
+            <Button
+              text={"Add Pokemon"}
+              secondaryText={"+"}
+              buttonClassName={"pokemonButton"}
+              onClick={clickButton}
+            />
           )}
           {addPokemon && <EditPokemon addPokemon={addPokemon} />}
         </div>

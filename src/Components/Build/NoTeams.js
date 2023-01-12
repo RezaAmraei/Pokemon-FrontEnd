@@ -17,11 +17,12 @@ const NoTeams = () => {
         Click here to start building a team
       </div>
 
-      <div className="noTeamCreateButtonDiv" onClick={createTeam}>
+      <div className="noTeamCreateButtonDiv">
         <Button
           className="noTeamCreateButton"
           text={"Create Team"}
           buttonClassName={"buttonCreateTeam"}
+          onClick={createTeam}
         />
       </div>
     </div>

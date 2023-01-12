@@ -10,8 +10,6 @@ export default function BasicTable({
   data,
   map,
 }) {
-  if (caption == "Information") console.log(data);
-  console.log(caption);
   return (
     <table className={`tableForData table_${caption}`}>
       <caption className={types[1]}>
