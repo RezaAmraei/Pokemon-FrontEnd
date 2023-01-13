@@ -1,0 +1,15 @@
+@import "../../Variables/Variables.scss";
+
+.pokemonTypeBox {
+  height: 35px;
+  width: 90px;
+  font-size: 20px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: $pokemonFont;
+  letter-spacing: 0.05em;
+  border-radius: 10px;
+  padding: 1px 3px 5px 3px;
+}
