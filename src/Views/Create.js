@@ -10,6 +10,8 @@ import Button from "../Components/Button/Button";
 
 const Create = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [pokemonConfirmed, setPokemonConfirmed] = useState(false);
+  const [showConfirmPokemon, setShowConfirmPokemon] = useState(true);
   const [addPokemon, setAddPokemon] = useState(null);
   function clickButton() {
     setButtonClicked(true);
@@ -25,11 +27,12 @@ const Create = () => {
           {buttonClicked && (
             <SearchBar home={false} setAddPokemon={setAddPokemon} />
           )}
-          {addPokemon && (
+          {addPokemon && showConfirmPokemon && (
             <PokeMonChecker
               addPokemon={addPokemon}
               setButtonClicked={setButtonClicked}
-              setAddPokemon={setAddPokemon}
+              setShowConfirmPokemon={setShowConfirmPokemon}
+              setPokemonConfirmed={setPokemonConfirmed}
             />
           )}
           {!buttonClicked && (
@@ -40,7 +43,7 @@ const Create = () => {
               onClick={clickButton}
             />
           )}
-          {addPokemon && <EditPokemon addPokemon={addPokemon} />}
+          {pokemonConfirmed && <EditPokemon addPokemon={addPokemon} />}
         </div>
       </div>
       <ColumnOfPokeBalls side="right" />
