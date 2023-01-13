@@ -13,7 +13,13 @@ const NavBar = ({ types }) => {
       <div className="mobileMenu">
         <HamburgerNavBar types={types} />
       </div>
-      <span className={types ? types[0] : ""}>PokeDex</span>
+      <span
+        className={types ? types[0] : ""}
+        id="PokeDex"
+        onClick={() => navbarLinks("")}
+      >
+        PokeDex
+      </span>
       <div className="links">
         <span
           className={types ? `linksSpan ${types[1]}` : "linksSpan"}
