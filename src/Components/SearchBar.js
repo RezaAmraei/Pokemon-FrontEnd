@@ -40,6 +40,9 @@ const SearchBar = ({
           placeholder="Search through Pokemon name or their ID!"
           className="searchBarInput searchBarDesktop"
           onChange={(e) => setPokemonForSearchBar(e.target.value)}
+          onKeyDown={(e) =>
+            e.key === "Enter" && apiFunction(pokemonForSearchBar)
+          }
         />
         <input
           type="text"
@@ -47,6 +50,9 @@ const SearchBar = ({
           placeholder="Pokemon Name or ID!"
           className="searchBarInput searchBarMobile"
           onChange={(e) => setPokemonForSearchBar(e.target.value)}
+          onKeyDown={(e) =>
+            e.key === "Enter" && apiFunction(pokemonForSearchBar)
+          }
         />
         <button
           className="searchBarFindButton"
