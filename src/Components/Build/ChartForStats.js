@@ -43,17 +43,11 @@ const ChartForStats = ({ pokemonStats }) => {
 
     scales: {
       y: {
-        // grid: {
-        //   color: "white",
-        // },
         ticks: {
           color: "rgb(233, 233, 233)",
         },
       },
       x: {
-        // grid: {
-        //   color: "white",
-        // },
         ticks: {
           color: "rgb(233, 233, 233)",
         },
