@@ -1,0 +1,22 @@
+@import "../../../Variables/Variables.scss";
+
+.editPokemonListMenu {
+  max-height: 40vh;
+  width: 100%;
+
+  margin-top: 30px;
+  overflow-y: auto;
+}
+.editPokemonListMenuPossibleOption {
+  padding: 5px;
+  background-color: $whiteColor;
+  color: $backgroundColor;
+  font-family: $titleFont;
+  font-weight: bold;
+  padding-left: 10px;
+  border-bottom: 1px solid $backgroundColor;
+}
+.editPokemonListMenuPossibleOption:hover {
+  filter: brightness(90%);
+  cursor: pointer;
+}

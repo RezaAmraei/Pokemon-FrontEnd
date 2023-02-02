@@ -1,13 +1,14 @@
 @import "../../../Variables/Variables.scss";
 
 .editPokemon {
-  border-bottom: 1px solid $whiteColor;
-  border-top: 1px solid $whiteColor;
   margin-top: 50px;
   width: 99%;
   max-width: 700px;
 }
-
+.editPokemonRows {
+  border-bottom: 1px solid $whiteColor;
+  border-top: 1px solid $whiteColor;
+}
 .editPokemonTopRow {
   display: flex;
   align-items: center;

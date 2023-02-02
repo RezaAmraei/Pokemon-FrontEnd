@@ -4,7 +4,6 @@ import ColorTypes from "../../Utils/ColorOfTypes.json";
 import "./PokemonTypeBox.css";
 
 const PokemonTypeBox = ({ type }) => {
-  console.log(ColorTypes);
   return (
     <div
       className="pokemonTypeBox"

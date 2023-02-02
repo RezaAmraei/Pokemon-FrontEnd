@@ -4,7 +4,17 @@ import EditPokemonInputField from "../../EditPokemonInputField/EditPokemonInputF
 import UpperCaseFirstLetter from "../../../../Utils/UpperCaseFirstLetter";
 import "../EditPokemon.css";
 
-const EditPokemonMiddleRow = ({ addPokemon }) => {
+const EditPokemonMiddleRow = ({
+  addPokemon,
+  editListMenuShown,
+  setEditListMenuShown,
+  list,
+  setList,
+  currentInput,
+  setCurrentInput,
+  abilities,
+  ability,
+}) => {
   let pokemonTypes = {
     "Type(s)":
       addPokemon.types.length === 2
@@ -26,6 +36,14 @@ const EditPokemonMiddleRow = ({ addPokemon }) => {
         <EditPokemonInputField
           placeholder={"Ability"}
           className={"editPokemonMoveset"}
+          setEditListMenuShown={setEditListMenuShown}
+          editListMenuShown={editListMenuShown}
+          setList={setList}
+          list={list}
+          currentInput={currentInput}
+          setCurrentInput={setCurrentInput}
+          display={abilities}
+          ability={ability}
         />
       </div>
     </div>

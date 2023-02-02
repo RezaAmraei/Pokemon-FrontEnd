@@ -1,9 +1,12 @@
 .editPokemon {
-  border-bottom: 1px solid rgb(233, 233, 233);
-  border-top: 1px solid rgb(233, 233, 233);
   margin-top: 50px;
   width: 99%;
   max-width: 700px;
+}
+
+.editPokemonRows {
+  border-bottom: 1px solid rgb(233, 233, 233);
+  border-top: 1px solid rgb(233, 233, 233);
 }
 
 .editPokemonTopRow {

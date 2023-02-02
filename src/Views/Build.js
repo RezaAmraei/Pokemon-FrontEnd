@@ -6,14 +6,15 @@ import "../CSS/Main.css";
 import NoTeams from "../Components/Build/NoTeams";
 
 const Build = () => {
-  localStorage.setItem("test", undefined);
-
+  localStorage.setItem("teams", false);
+  console.log(localStorage.getItem("teams"));
+  if (JSON.parse(localStorage.getItem("teams"))) console.log("hi");
   return (
     <div className="mainPage">
       <ColumnOfPokeBalls side="left" />
       <div className="middleColumn">
         <NavBar />
-        {localStorage.getItem("teams") ? (
+        {JSON.parse(localStorage.getItem("teams")) ? (
           <div> Heres your team </div>
         ) : (
           <NoTeams />

@@ -29,6 +29,19 @@
   cursor: pointer;
 }
 
+.editPokemonBottomRowbutton {
+  color: $backgroundColor;
+  background-color: $whiteColor;
+  font-size: 18px;
+  padding: 5px 10px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.editPokemonBottomRowbutton:hover {
+  cursor: pointer;
+}
+
 @media (min-width: 0px) and (max-width: 750px) {
   .buttonCreateTeam {
     display: block;
