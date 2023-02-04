@@ -3,14 +3,7 @@ import EditPokemonInputField from "../../EditPokemonInputField/EditPokemonInputF
 import ChartForStats from "../../ChartForStats";
 import "../EditPokemon.css";
 
-const EditPokemonTopRow = ({
-  addPokemon,
-  currentInput,
-  setCurrentInput,
-  moves,
-  moveset,
-  setCurrentMove,
-}) => {
+const EditPokemonTopRow = ({ addPokemon, moves }) => {
   let pokemonStats = [
     addPokemon.stats[0].base_stat,
     addPokemon.stats[1].base_stat,
@@ -33,41 +26,25 @@ const EditPokemonTopRow = ({
         <EditPokemonInputField
           placeholder={"Move 1"}
           className={"editPokemonMoveset"}
-          currentInput={currentInput}
-          setCurrentInput={setCurrentInput}
           display={moves}
-          setCurrentMove={setCurrentMove}
-          moveset={moveset}
           index={0}
         />
         <EditPokemonInputField
           placeholder={"Move 2"}
           className={"editPokemonMoveset"}
-          currentInput={currentInput}
-          setCurrentInput={setCurrentInput}
           display={moves}
-          setCurrentMove={setCurrentMove}
-          moveset={moveset}
           index={1}
         />
         <EditPokemonInputField
           placeholder={"Move 3"}
           className={"editPokemonMoveset"}
-          currentInput={currentInput}
-          setCurrentInput={setCurrentInput}
           display={moves}
-          setCurrentMove={setCurrentMove}
-          moveset={moveset}
           index={2}
         />
         <EditPokemonInputField
           placeholder={"Move 4"}
           className={"editPokemonMoveset"}
-          currentInput={currentInput}
-          setCurrentInput={setCurrentInput}
           display={moves}
-          setCurrentMove={setCurrentMove}
-          moveset={moveset}
           index={3}
         />
       </div>

@@ -1,22 +1,30 @@
 import React, { useState, useEffect } from "react";
-import { selectEditListMenuShown } from "../../../redux/selectors";
+import {
+  selectEditListMenuShown,
+  selectCurrentInput,
+  selectMoveset,
+} from "../../../redux/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import "./EditPokemonInputField.css";
-import { toggleEditListMenuShown, setList } from "../../../redux/partySlice";
+import {
+  toggleEditListMenuShown,
+  setList,
+  setCurrentInput,
+  setCurrentMove,
+  setMoveset,
+} from "../../../redux/partySlice";
 
 const EditPokemonInputField = ({
   placeholder,
   className,
-  currentInput,
-  setCurrentInput,
   display,
-  moveset,
-  setCurrentMove,
   index,
   ability,
 }) => {
   const dispatch = useDispatch();
   const editListMenuShown = useSelector(selectEditListMenuShown);
+  const currentInput = useSelector(selectCurrentInput);
+  const moveset = useSelector(selectMoveset);
 
   const checkIfMove =
     placeholder.substring(0, 4) === "Move" ? moveset[index] : ability;
@@ -31,8 +39,8 @@ const EditPokemonInputField = ({
   function clickedOn() {
     if (currentInput != placeholder) {
       dispatch(setList(display));
-      setCurrentInput(placeholder);
-      if (ifCheck) setCurrentMove(index);
+      dispatch(setCurrentInput(placeholder));
+      if (ifCheck) dispatch(setCurrentMove(index));
     }
     if (!editListMenuShown) {
       dispatch(toggleEditListMenuShown());

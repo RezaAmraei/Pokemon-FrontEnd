@@ -9,21 +9,18 @@ import { addPokemonToParty } from "../../../redux/partySlice";
 import {
   selectEditListMenuShown,
   selectParty,
-  selectList,
+  selectMoveset,
 } from "../../../redux/selectors";
 
 const EditPokemon = ({ addPokemon }) => {
   const dispatch = useDispatch();
   const party = useSelector(selectParty);
+  const moveset = useSelector(selectMoveset);
   const editListMenuShown = useSelector(selectEditListMenuShown);
-  const list = useSelector(selectList);
 
-  const [currentInput, setCurrentInput] = useState("");
   const moves = addPokemon.moves;
   const abilities = addPokemon.abilities;
 
-  const [moveset, setMoveset] = useState(["", "", "", ""]);
-  const [currentMove, setCurrentMove] = useState(0);
   const [ability, setAbility] = useState("");
 
   const [pokemonToAdd, setPokemonToAdd] = useState({
@@ -38,38 +35,21 @@ const EditPokemon = ({ addPokemon }) => {
     <div className="editPokemon">
       <div className="editPokemonRows">
         {/* After everything is complete look into redux to clean up code */}
-        <EditPokemonTopRow
-          addPokemon={addPokemon}
-          currentInput={currentInput}
-          setCurrentInput={setCurrentInput}
-          moves={moves}
-          moveset={moveset}
-          setCurrentMove={setCurrentMove}
-        />
+        <EditPokemonTopRow addPokemon={addPokemon} moves={moves} />
         <EditPokemonMiddleRow
           addPokemon={addPokemon}
           abilities={abilities}
-          currentInput={currentInput}
-          setCurrentInput={setCurrentInput}
           ability={ability}
         />
         <EditPokemonBottomRow
           pokemonToAdd={pokemonToAdd}
           setPokemonToAdd={setPokemonToAdd}
-          moveset={moveset}
           ability={ability}
           currPokemon={addPokemon}
         />
       </div>
 
-      {editListMenuShown && (
-        <EditPokemonListMenu
-          moveset={moveset}
-          setMoveset={setMoveset}
-          currentMove={currentMove}
-          setAbility={setAbility}
-        />
-      )}
+      {editListMenuShown && <EditPokemonListMenu setAbility={setAbility} />}
     </div>
   );
 };

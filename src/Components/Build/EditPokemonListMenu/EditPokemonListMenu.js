@@ -1,19 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectList } from "../../../redux/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { selectList, selectCurrentMove } from "../../../redux/selectors";
+import { setMoveset } from "../../../redux/partySlice";
 import "./EditPokemonListMenu.css";
 
-const EditPokemonListMenu = ({
-  moveset,
-  setMoveset,
-  currentMove,
-  setAbility,
-}) => {
+const EditPokemonListMenu = ({ setAbility }) => {
+  const dispatch = useDispatch();
   const list = useSelector(selectList);
+  const currentMove = useSelector(selectCurrentMove);
   function setMove(move) {
-    let temp = [...moveset];
-    temp[currentMove] = move.name;
-    setMoveset(temp);
+    dispatch(setMoveset({ move: move.name, index: currentMove }));
   }
   function setAbilityFunc(obj) {
     setAbility(obj.name);

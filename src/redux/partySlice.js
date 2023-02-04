@@ -5,6 +5,11 @@ const initialState = {
   ui: {
     editListMenuShown: false,
     list: [],
+    currentInput: "",
+    currentMove: 0,
+  },
+  pokemon: {
+    moveset: ["", "", "", ""],
   },
 };
 
@@ -21,10 +26,27 @@ export const counterSlice = createSlice({
     setList: (state, action) => {
       state.ui.list = [...action.payload];
     },
+    setCurrentInput: (state, action) => {
+      state.ui.currentInput = action.payload;
+    },
+    setCurrentMove: (state, action) => {
+      state.ui.currentMove = action.payload;
+    },
+    setMoveset: (state, action) => {
+      let temp = state.pokemon.moveset;
+      temp[action.payload.index] = action.payload.move;
+      state.pokemon.moveset = temp;
+    },
   },
 });
 
-export const { addPokemonToParty, toggleEditListMenuShown, setList } =
-  counterSlice.actions;
+export const {
+  addPokemonToParty,
+  toggleEditListMenuShown,
+  setList,
+  setCurrentInput,
+  setCurrentMove,
+  setMoveset,
+} = counterSlice.actions;
 
 export default counterSlice.reducer;
