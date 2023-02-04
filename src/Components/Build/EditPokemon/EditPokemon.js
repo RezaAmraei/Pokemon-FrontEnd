@@ -23,14 +23,6 @@ const EditPokemon = ({ addPokemon }) => {
 
   const [ability, setAbility] = useState("");
 
-  const [pokemonToAdd, setPokemonToAdd] = useState({
-    id: addPokemon.id,
-    name: addPokemon.name,
-    image: addPokemon.sprites,
-    moveset,
-    ability,
-  });
-
   return (
     <div className="editPokemon">
       <div className="editPokemonRows">
@@ -41,12 +33,7 @@ const EditPokemon = ({ addPokemon }) => {
           abilities={abilities}
           ability={ability}
         />
-        <EditPokemonBottomRow
-          pokemonToAdd={pokemonToAdd}
-          setPokemonToAdd={setPokemonToAdd}
-          ability={ability}
-          currPokemon={addPokemon}
-        />
+        <EditPokemonBottomRow ability={ability} currPokemon={addPokemon} />
       </div>
 
       {editListMenuShown && <EditPokemonListMenu setAbility={setAbility} />}
