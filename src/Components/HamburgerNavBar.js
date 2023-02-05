@@ -17,6 +17,8 @@ export default function HamburgerNavBar({ types }) {
     if (text == "Home") {
       navigate("/");
       return;
+    } else if (text === "X") {
+      return;
     }
     navigate(`/${text}`);
   }
