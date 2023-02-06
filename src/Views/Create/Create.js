@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import ColumnOfPokeBalls from "../Components/ColumnOfPokeBalls";
-import NavBar from "../Components/NavBar";
-import SearchBar from "../Components/SearchBar";
-import EditPokemon from "../Components/Build/EditPokemon/EditPokemon";
-import "../CSS/Main.css";
-import "../CSS/Create-Team.css";
-import PokeMonChecker from "../Components/Build/PokeMonChecker";
-import Button from "../Components/Button/Button";
+import ColumnOfPokeBalls from "../../Components/ColumnOfPokeBalls";
+import NavBar from "../../Components/NavBar";
+import SearchBar from "../../Components/SearchBar";
+import EditPokemon from "../../Components/Build/EditPokemon/EditPokemon";
+
+import "./Create-Team.css";
+import PokeMonChecker from "../../Components/Build/PokeMonChecker";
+import Button from "../../Components/Button/Button";
 
 const Create = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -22,7 +22,7 @@ const Create = () => {
       <div className="middleColumn">
         <NavBar />
         <span className="createTeamFont createTeamHeader">Pick your team!</span>
-
+        <div className="createCurrentTeam"></div>
         <div className="createTeamMiddleCol">
           {buttonClicked && (
             <SearchBar home={false} setAddPokemon={setAddPokemon} />
