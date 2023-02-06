@@ -14,7 +14,11 @@ const NoTeams = () => {
         You Have No Teams Available!
       </div>
       <div className="noTeamsFont noTeamsStartBuilding" onClick={createTeam}>
-        Click here to start building a team
+        Click{" "}
+        <span id="noTeamsUnderline" className="noTeamsFont">
+          here
+        </span>
+        &nbsp;to start building a team
       </div>
 
       <div className="noTeamCreateButtonDiv">

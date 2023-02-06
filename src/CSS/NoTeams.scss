@@ -19,6 +19,9 @@
 .noTeams {
   margin-top: 100px;
 }
+#noTeamsUnderline {
+  text-decoration: underline;
+}
 
 @media (min-width: 0px) and (max-width: 750px) {
   .noTeams {
@@ -38,6 +41,9 @@
     align-items: center;
     justify-content: center;
   }
+  #noTeamsUnderline {
+    text-decoration: none;
+  }
 }
 
 @media (min-width: 751px) and (max-width: 1150px) {
@@ -56,5 +62,8 @@
   }
   .noTeamsStartBuilding {
     font-size: 22px;
+  }
+  #noTeamsUnderline {
+    text-decoration: none;
   }
 }
