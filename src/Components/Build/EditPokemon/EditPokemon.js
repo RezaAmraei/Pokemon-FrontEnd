@@ -10,13 +10,15 @@ import {
   selectEditListMenuShown,
   selectParty,
   selectMoveset,
+  selectAddPokemon,
 } from "../../../redux/selectors";
 
-const EditPokemon = ({ addPokemon }) => {
+const EditPokemon = () => {
   const dispatch = useDispatch();
   const party = useSelector(selectParty);
   const moveset = useSelector(selectMoveset);
   const editListMenuShown = useSelector(selectEditListMenuShown);
+  const addPokemon = useSelector(selectAddPokemon);
 
   const moves = addPokemon.moves;
   const abilities = addPokemon.abilities;
@@ -27,12 +29,8 @@ const EditPokemon = ({ addPokemon }) => {
     <div className="editPokemon">
       <div className="editPokemonRows">
         {/* After everything is complete look into redux to clean up code */}
-        <EditPokemonTopRow addPokemon={addPokemon} moves={moves} />
-        <EditPokemonMiddleRow
-          addPokemon={addPokemon}
-          abilities={abilities}
-          ability={ability}
-        />
+        <EditPokemonTopRow moves={moves} />
+        <EditPokemonMiddleRow abilities={abilities} ability={ability} />
         <EditPokemonBottomRow ability={ability} currPokemon={addPokemon} />
       </div>
 

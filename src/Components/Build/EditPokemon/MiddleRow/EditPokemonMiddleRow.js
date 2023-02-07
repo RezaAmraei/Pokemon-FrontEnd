@@ -3,9 +3,10 @@ import PokemonTypeBox from "../../../PokemonTypeBox/PokemonTypeBox";
 import EditPokemonInputField from "../../EditPokemonInputField/EditPokemonInputField";
 import UpperCaseFirstLetter from "../../../../Utils/UpperCaseFirstLetter";
 import "../EditPokemon.css";
+import { useSelector } from "react-redux";
+import { selectAddPokemon } from "../../../../redux/selectors";
 
 const EditPokemonMiddleRow = ({
-  addPokemon,
   editListMenuShown,
   setEditListMenuShown,
   list,
@@ -15,6 +16,7 @@ const EditPokemonMiddleRow = ({
   abilities,
   ability,
 }) => {
+  const addPokemon = useSelector(selectAddPokemon);
   let pokemonTypes = {
     "Type(s)":
       addPokemon.types.length === 2

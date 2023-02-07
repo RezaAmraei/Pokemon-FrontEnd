@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import ColumnOfPokeBalls from "../Components/ColumnOfPokeBalls";
 import NavBar from "../Components/NavBar";
-import SearchBar from "../Components/SearchBar";
+
 import "../CSS/Main.css";
 import NoTeams from "../Components/Build/NoTeams";
 
 const Build = () => {
-  localStorage.setItem("teams", false);
-  console.log(localStorage.getItem("teams"));
-  if (JSON.parse(localStorage.getItem("teams"))) console.log("hi");
+  // localStorage.removeItem("teams");
   return (
     <div className="mainPage">
       <ColumnOfPokeBalls side="left" />

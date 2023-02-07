@@ -10,6 +10,7 @@ const initialState = {
   },
   pokemon: {
     moveset: ["", "", "", ""],
+    addPokemon: null,
   },
 };
 
@@ -37,6 +38,10 @@ export const counterSlice = createSlice({
       temp[action.payload.index] = action.payload.move;
       state.pokemon.moveset = temp;
     },
+    setAddPokemon: (state, action) => {
+      console.log(action.payload);
+      state.pokemon.addPokemon = action.payload;
+    },
   },
 });
 
@@ -47,6 +52,7 @@ export const {
   setCurrentInput,
   setCurrentMove,
   setMoveset,
+  setAddPokemon,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;

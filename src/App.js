@@ -1,7 +1,7 @@
 import React from "react";
 import Main from "./Views/Main";
 import Build from "./Views/Build.js";
-import Create from "./Views/Create";
+import Create from "./Views/Create/Create.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 

@@ -23,6 +23,12 @@
   width: 100%;
 }
 
+.createCurrentTeam {
+  border: 1px solid red;
+  height: 200px;
+  width: 200px;
+}
+
 @media (min-width: 0px) and (max-width: 750px) {
   .createTeamHeader {
     font-size: 33px;

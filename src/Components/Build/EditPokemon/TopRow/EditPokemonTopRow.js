@@ -2,8 +2,11 @@ import React from "react";
 import EditPokemonInputField from "../../EditPokemonInputField/EditPokemonInputField";
 import ChartForStats from "../../ChartForStats";
 import "../EditPokemon.css";
+import { useSelector } from "react-redux";
+import { selectAddPokemon } from "../../../../redux/selectors";
 
-const EditPokemonTopRow = ({ addPokemon, moves }) => {
+const EditPokemonTopRow = ({ moves }) => {
+  const addPokemon = useSelector(selectAddPokemon);
   let pokemonStats = [
     addPokemon.stats[0].base_stat,
     addPokemon.stats[1].base_stat,

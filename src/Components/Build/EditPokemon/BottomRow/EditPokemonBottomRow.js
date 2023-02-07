@@ -15,13 +15,21 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
       moveset,
       ability,
     };
-    //console.log(pokemonToAdd);
-    if (JSON.parse(localStorage.getItem("teams")).length) {
-      let temp = JSON.parse(localStorage.getItem("teams"));
+
+    if (JSON.parse(localStorage.getItem("teams"))) {
+      let temp = JSON.parse(localStorage.getItem("teams"))[0].team;
       temp.push(pokemonToAdd);
       localStorage.setItem("teams", JSON.stringify(temp));
     } else {
-      localStorage.setItem("teams", JSON.stringify([pokemonToAdd]));
+      localStorage.setItem(
+        "teams",
+        JSON.stringify([
+          {
+            teamName: "",
+            team: [pokemonToAdd],
+          },
+        ])
+      );
     }
   }
   function findWhichSlot() {}

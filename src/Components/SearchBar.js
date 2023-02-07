@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import "../CSS/SearchBar.css";
 import PokeAPIFunction from "../Utils/PokeAPIFunction";
 import DetermineHowManyTypes from "../Utils/DetermineHowManyTypes";
-const SearchBar = ({
-  setPokemonDisplay,
-  setTypes,
-  types,
-  home = true,
-  setAddPokemon = null,
-}) => {
+import { useDispatch } from "react-redux";
+import { setAddPokemon } from "../redux/partySlice";
+
+const SearchBar = ({ setPokemonDisplay, setTypes, types, home = true }) => {
+  const dispatch = useDispatch();
   const [pokemonForSearchBar, setPokemonForSearchBar] = useState("");
 
   const apiFunction = async function (pokemon) {
@@ -19,7 +17,7 @@ const SearchBar = ({
       setPokemonDisplay(pokemonTest);
       setTypes([typesFunctionResult[0], typesFunctionResult[1]]);
     } else {
-      setAddPokemon(pokemonTest);
+      dispatch(setAddPokemon(pokemonTest));
     }
   };
 

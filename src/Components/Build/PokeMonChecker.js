@@ -3,16 +3,19 @@ import "../../CSS/PokeMonChecker.css";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import UpperCaseFirstLetter from "../../Utils/UpperCaseFirstLetter";
+import { useDispatch, useSelector } from "react-redux";
+import { setAddPokemon } from "../../redux/partySlice";
+import { selectAddPokemon } from "../../redux/selectors";
 
 const PokeMonChecker = ({
-  addPokemon,
   setButtonClicked,
-  setAddPokemon,
   setPokemonConfirmed,
   setShowConfirmPokemon,
 }) => {
+  const dispatch = useDispatch();
+  const addPokemon = useSelector(selectAddPokemon);
   function cancelButton() {
-    setAddPokemon(null);
+    dispatch(setAddPokemon(null));
     setButtonClicked(false);
   }
 
