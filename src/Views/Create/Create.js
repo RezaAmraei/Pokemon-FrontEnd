@@ -7,16 +7,28 @@ import "./Create-Team.css";
 import PokeMonChecker from "../../Components/Build/PokeMonChecker";
 import Button from "../../Components/Button/Button";
 import MapOverCurrentTeam from "../../Components/Build/MapOverCurrentTeam/MapOverCurrentTeam";
-import { useSelector } from "react-redux";
-import { selectAddPokemon } from "../../redux/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectAddPokemon,
+  selectParty,
+  selectPokemonConfirmed,
+  selectSearchButtonShowButton,
+} from "../../redux/selectors";
+import { toggleSearchBarButton } from "../../redux/partySlice";
 
 const Create = () => {
-  const [buttonClicked, setButtonClicked] = useState(false);
-  const [pokemonConfirmed, setPokemonConfirmed] = useState(false);
+  const dispatch = useDispatch();
+
+  const searchButtonShowButton = useSelector(selectSearchButtonShowButton);
+  const pokemonConfirmed = useSelector(selectPokemonConfirmed);
   const [showConfirmPokemon, setShowConfirmPokemon] = useState(true);
+  const [addPokemonButton, setAddPokemonButton] = useState(true);
   const addPokemon = useSelector(selectAddPokemon);
+  const party = useSelector(selectParty);
+
   function clickButton() {
-    setButtonClicked(true);
+    dispatch(toggleSearchBarButton(true));
+    setAddPokemonButton(false);
   }
   return (
     <div className="mainPage">
@@ -24,28 +36,27 @@ const Create = () => {
       <div className="middleColumn">
         <NavBar />
         <span className="createTeamFont createTeamHeader">Pick your team!</span>
-        {/* Map Over Current Pokemon in Team */}
-        {localStorage.getItem("teams") && (
-          <div className="createCurrentTeam">
-            <MapOverCurrentTeam index={0} />
-          </div>
-        )}
 
         <div className="createTeamMiddleCol">
           {/* Search Bar for when Add Pokemon is Clicked */}
-          {buttonClicked && <SearchBar home={false} />}
+          {searchButtonShowButton && <SearchBar home={false} />}
+
+          {/* Map Over Current Pokemon in Team */}
+          {party[0] && (
+            <div className="createCurrentTeam">
+              <MapOverCurrentTeam index={0} />
+            </div>
+          )}
 
           {/* Div to confirm that this is the currect Pokeon You want to edit */}
           {addPokemon && showConfirmPokemon && (
             <PokeMonChecker
               addPokemon={addPokemon}
-              setButtonClicked={setButtonClicked}
               setShowConfirmPokemon={setShowConfirmPokemon}
-              setPokemonConfirmed={setPokemonConfirmed}
             />
           )}
           {/* Button to confirm youre ready to start building your team */}
-          {!buttonClicked && (
+          {addPokemonButton && (
             <Button
               text={"Add Pokemon"}
               secondaryText={"+"}

@@ -5,3 +5,6 @@ export const selectCurrentInput = (state) => state.ui.currentInput;
 export const selectCurrentMove = (state) => state.ui.currentMove;
 export const selectMoveset = (state) => state.pokemon.moveset;
 export const selectAddPokemon = (state) => state.pokemon.addPokemon;
+export const selectSearchButtonShowButton = (state) =>
+  state.ui.searchButtonShowButton;
+export const selectPokemonConfirmed = (state) => state.ui.pokemonConfirmed;

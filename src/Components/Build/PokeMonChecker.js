@@ -4,24 +4,25 @@ import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
 import UpperCaseFirstLetter from "../../Utils/UpperCaseFirstLetter";
 import { useDispatch, useSelector } from "react-redux";
-import { setAddPokemon } from "../../redux/partySlice";
+import {
+  setAddPokemon,
+  togglePokemonConfirmed,
+  toggleSearchBarButton,
+} from "../../redux/partySlice";
 import { selectAddPokemon } from "../../redux/selectors";
 
-const PokeMonChecker = ({
-  setButtonClicked,
-  setPokemonConfirmed,
-  setShowConfirmPokemon,
-}) => {
+const PokeMonChecker = ({ setShowConfirmPokemon }) => {
   const dispatch = useDispatch();
   const addPokemon = useSelector(selectAddPokemon);
   function cancelButton() {
     dispatch(setAddPokemon(null));
-    setButtonClicked(false);
+    dispatch(toggleSearchBarButton(true));
   }
 
   function confirmButton() {
-    setPokemonConfirmed(true);
+    dispatch(togglePokemonConfirmed(true));
     setShowConfirmPokemon(false);
+    dispatch(toggleSearchBarButton(false));
   }
   return (
     <div className="pokeMonChecker ">

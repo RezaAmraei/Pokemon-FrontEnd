@@ -3,9 +3,17 @@ import { useSelector } from "react-redux";
 import { selectMoveset } from "../../../../redux/selectors";
 import Button from "../../../Button/Button";
 import "../EditPokemon.css";
+import { useDispatch } from "react-redux";
+import {
+  addPokemonToParty,
+  setMoveset,
+  togglePokemonConfirmed,
+  toggleSearchBarButton,
+} from "../../../../redux/partySlice";
 
 const EditPokemonBottomRow = ({ currPokemon, ability }) => {
   const moveset = useSelector(selectMoveset);
+  const dispatch = useDispatch();
 
   function addPokemonToTeam() {
     const pokemonToAdd = {
@@ -17,9 +25,13 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
     };
 
     if (JSON.parse(localStorage.getItem("teams"))) {
-      let temp = JSON.parse(localStorage.getItem("teams"))[0].team;
-      temp.push(pokemonToAdd);
-      localStorage.setItem("teams", JSON.stringify(temp));
+      let temp = JSON.parse(localStorage.getItem("teams"));
+      let tempParty = JSON.parse(localStorage.getItem("teams"))[0].team;
+      tempParty.push(pokemonToAdd);
+      temp[0].team.push(pokemonToAdd);
+      console.log(tempParty);
+      localStorage.setItem("teams", JSON.stringify(tempParty));
+      dispatch(addPokemonToParty(pokemonToAdd));
     } else {
       localStorage.setItem(
         "teams",
@@ -30,8 +42,16 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
           },
         ])
       );
+      dispatch(addPokemonToParty(pokemonToAdd));
     }
   }
+
+  const cancelButton = function () {
+    dispatch(toggleSearchBarButton(true));
+    dispatch(setMoveset("reset"));
+    dispatch(togglePokemonConfirmed(false));
+    // dispatch();
+  };
   function findWhichSlot() {}
 
   return (
@@ -41,7 +61,11 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
         buttonClassName={"editPokemonBottomRowbutton"}
         onClick={() => addPokemonToTeam()}
       />
-      <Button text={"Cancel"} buttonClassName={"editPokemonBottomRowbutton"} />
+      <Button
+        text={"Cancel"}
+        buttonClassName={"editPokemonBottomRowbutton"}
+        onClick={cancelButton}
+      />
     </div>
   );
 };

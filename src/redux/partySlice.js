@@ -1,12 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+let localStorageParty = JSON.parse(localStorage.getItem("teams"));
+if (localStorageParty) {
+  localStorageParty = localStorageParty[0].team;
+}
+
 const initialState = {
-  party: [],
+  party: localStorageParty || [],
   ui: {
     editListMenuShown: false,
     list: [],
     currentInput: "",
     currentMove: 0,
+    searchButtonShowButton: false,
+    pokemonConfirmed: false,
   },
   pokemon: {
     moveset: ["", "", "", ""],
@@ -21,6 +28,9 @@ export const counterSlice = createSlice({
     addPokemonToParty: (state, action) => {
       state.party = [...state.party, action.payload];
     },
+    resetParty: (state, action) => {
+      state.party = [...action.payload];
+    },
     toggleEditListMenuShown: (state) => {
       state.ui.editListMenuShown = !state.ui.editListMenuShown;
     },
@@ -34,13 +44,22 @@ export const counterSlice = createSlice({
       state.ui.currentMove = action.payload;
     },
     setMoveset: (state, action) => {
+      if (action.payload == "reset") {
+        state.pokemon.moveset = ["", "", "", ""];
+        return;
+      }
       let temp = state.pokemon.moveset;
       temp[action.payload.index] = action.payload.move;
       state.pokemon.moveset = temp;
     },
     setAddPokemon: (state, action) => {
-      console.log(action.payload);
       state.pokemon.addPokemon = action.payload;
+    },
+    toggleSearchBarButton: (state, action) => {
+      state.ui.searchButtonShowButton = action.payload;
+    },
+    togglePokemonConfirmed: (state, action) => {
+      state.ui.pokemonConfirmed = action.payload;
     },
   },
 });
@@ -53,6 +72,9 @@ export const {
   setCurrentMove,
   setMoveset,
   setAddPokemon,
+  toggleSearchBarButton,
+  togglePokemonConfirmed,
+  resetParty,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;

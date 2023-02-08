@@ -3,7 +3,7 @@ import "../CSS/SearchBar.css";
 import PokeAPIFunction from "../Utils/PokeAPIFunction";
 import DetermineHowManyTypes from "../Utils/DetermineHowManyTypes";
 import { useDispatch } from "react-redux";
-import { setAddPokemon } from "../redux/partySlice";
+import { setAddPokemon, toggleSearchBarButton } from "../redux/partySlice";
 
 const SearchBar = ({ setPokemonDisplay, setTypes, types, home = true }) => {
   const dispatch = useDispatch();
@@ -18,6 +18,7 @@ const SearchBar = ({ setPokemonDisplay, setTypes, types, home = true }) => {
       setTypes([typesFunctionResult[0], typesFunctionResult[1]]);
     } else {
       dispatch(setAddPokemon(pokemonTest));
+      dispatch(toggleSearchBarButton(false));
     }
   };
 
