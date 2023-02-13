@@ -1,0 +1,51 @@
+@import "../../../Variables/Variables.scss";
+
+.showTeams {
+  margin-top: 100px;
+  border: 1px solid red;
+  height: 300px;
+  width: 600px;
+}
+.showTeamsHeader {
+  font-family: $pokemonFont;
+  font-size: 24px;
+  color: $whiteColor;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.showTeamsMap {
+  margin-top: 50px;
+}
+.showTeamsTeam {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.showTeamsTeamName {
+  font-family: $titleFont;
+  color: $whiteColor;
+  font-size: 20px;
+}
+.showTeamsImages {
+  display: flex;
+  margin-left: 60px;
+  height: 80px;
+}
+
+.showTeamsButtonDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.showTeamsButton {
+  font-family: $titleFont;
+  background-color: $whiteColor;
+  color: $backgroundColor;
+  font-size: 18px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
