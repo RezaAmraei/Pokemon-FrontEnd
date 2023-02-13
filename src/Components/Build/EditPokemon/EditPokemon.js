@@ -28,7 +28,6 @@ const EditPokemon = () => {
   return (
     <div className="editPokemon">
       <div className="editPokemonRows">
-        {/* After everything is complete look into redux to clean up code */}
         <EditPokemonTopRow moves={moves} />
         <EditPokemonMiddleRow abilities={abilities} ability={ability} />
         <EditPokemonBottomRow ability={ability} currPokemon={addPokemon} />

@@ -26,11 +26,8 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
 
     if (JSON.parse(localStorage.getItem("teams"))) {
       let temp = JSON.parse(localStorage.getItem("teams"));
-      let tempParty = JSON.parse(localStorage.getItem("teams"))[0].team;
-      tempParty.push(pokemonToAdd);
       temp[0].team.push(pokemonToAdd);
-      console.log(tempParty);
-      localStorage.setItem("teams", JSON.stringify(tempParty));
+      localStorage.setItem("teams", JSON.stringify(temp));
       dispatch(addPokemonToParty(pokemonToAdd));
     } else {
       localStorage.setItem(
@@ -50,9 +47,7 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
     dispatch(toggleSearchBarButton(true));
     dispatch(setMoveset("reset"));
     dispatch(togglePokemonConfirmed(false));
-    // dispatch();
   };
-  function findWhichSlot() {}
 
   return (
     <div className="editPokemonBottomRow">

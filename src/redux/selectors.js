@@ -8,3 +8,4 @@ export const selectAddPokemon = (state) => state.pokemon.addPokemon;
 export const selectSearchButtonShowButton = (state) =>
   state.ui.searchButtonShowButton;
 export const selectPokemonConfirmed = (state) => state.ui.pokemonConfirmed;
+export const selectCurrentTeam = (state) => state.currentTeam;

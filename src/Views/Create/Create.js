@@ -10,6 +10,7 @@ import MapOverCurrentTeam from "../../Components/Build/MapOverCurrentTeam/MapOve
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectAddPokemon,
+  selectCurrentTeam,
   selectParty,
   selectPokemonConfirmed,
   selectSearchButtonShowButton,
@@ -17,6 +18,7 @@ import {
 import { toggleSearchBarButton } from "../../redux/partySlice";
 
 const Create = () => {
+  const currentTeam = useSelector(selectCurrentTeam);
   const dispatch = useDispatch();
 
   const searchButtonShowButton = useSelector(selectSearchButtonShowButton);

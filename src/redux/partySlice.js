@@ -19,6 +19,7 @@ const initialState = {
     moveset: ["", "", "", ""],
     addPokemon: null,
   },
+  currentTeam: 0,
 };
 
 export const counterSlice = createSlice({
@@ -61,6 +62,9 @@ export const counterSlice = createSlice({
     togglePokemonConfirmed: (state, action) => {
       state.ui.pokemonConfirmed = action.payload;
     },
+    pickIndexForCurrentTeam: (state, action) => {
+      state.currentTeam = action.payload;
+    },
   },
 });
 
@@ -75,6 +79,7 @@ export const {
   toggleSearchBarButton,
   togglePokemonConfirmed,
   resetParty,
+  pickIndexForCurrentTeam,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;
