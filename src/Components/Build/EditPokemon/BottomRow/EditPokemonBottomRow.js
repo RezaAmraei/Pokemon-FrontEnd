@@ -3,17 +3,21 @@ import { useSelector } from "react-redux";
 import { selectMoveset } from "../../../../redux/selectors";
 import Button from "../../../Button/Button";
 import "../EditPokemon.css";
+import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
   addPokemonToParty,
   setMoveset,
   togglePokemonConfirmed,
   toggleSearchBarButton,
+  saveButtonPressed,
 } from "../../../../redux/partySlice";
 
 const EditPokemonBottomRow = ({ currPokemon, ability }) => {
   const moveset = useSelector(selectMoveset);
   const dispatch = useDispatch();
+
+  const { teamNumber } = useParams();
 
   function addPokemonToTeam() {
     const pokemonToAdd = {
@@ -26,9 +30,18 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
 
     if (JSON.parse(localStorage.getItem("teams"))) {
       let temp = JSON.parse(localStorage.getItem("teams"));
-      temp[0].team.push(pokemonToAdd);
-      localStorage.setItem("teams", JSON.stringify(temp));
-      dispatch(addPokemonToParty(pokemonToAdd));
+      if (temp[teamNumber]) {
+        temp[teamNumber].team.push(pokemonToAdd);
+        localStorage.setItem("teams", JSON.stringify(temp));
+        dispatch(addPokemonToParty(pokemonToAdd));
+      } else {
+        temp[teamNumber] = {
+          teamName: "",
+          team: [pokemonToAdd],
+        };
+        localStorage.setItem("teams", JSON.stringify(temp));
+        dispatch(addPokemonToParty(pokemonToAdd));
+      }
     } else {
       localStorage.setItem(
         "teams",
@@ -41,6 +54,7 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
       );
       dispatch(addPokemonToParty(pokemonToAdd));
     }
+    dispatch(saveButtonPressed());
   }
 
   const cancelButton = function () {
@@ -54,7 +68,7 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
       <Button
         text={"Save"}
         buttonClassName={"editPokemonBottomRowbutton"}
-        onClick={() => addPokemonToTeam()}
+        onClick={addPokemonToTeam}
       />
       <Button
         text={"Cancel"}

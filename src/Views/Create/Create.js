@@ -7,6 +7,7 @@ import "./Create-Team.css";
 import PokeMonChecker from "../../Components/Build/PokeMonChecker";
 import Button from "../../Components/Button/Button";
 import MapOverCurrentTeam from "../../Components/Build/MapOverCurrentTeam/MapOverCurrentTeam";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectAddPokemon,
@@ -28,6 +29,8 @@ const Create = () => {
   const addPokemon = useSelector(selectAddPokemon);
   const party = useSelector(selectParty);
 
+  const { teamNumber } = useParams();
+
   function clickButton() {
     dispatch(toggleSearchBarButton(true));
     setAddPokemonButton(false);
@@ -44,9 +47,9 @@ const Create = () => {
           {searchButtonShowButton && <SearchBar home={false} />}
 
           {/* Map Over Current Pokemon in Team */}
-          {party[0] && (
+          {party && (
             <div className="createCurrentTeam">
-              <MapOverCurrentTeam index={0} />
+              <MapOverCurrentTeam index={teamNumber} />
             </div>
           )}
 

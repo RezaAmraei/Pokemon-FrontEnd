@@ -2,9 +2,7 @@
 
 .showTeams {
   margin-top: 100px;
-  border: 1px solid red;
   height: 300px;
-  width: 600px;
 }
 .showTeamsHeader {
   font-family: $pokemonFont;
@@ -26,13 +24,24 @@
   font-family: $titleFont;
   color: $whiteColor;
   font-size: 20px;
+  width: 120px;
 }
 .showTeamsImages {
   display: flex;
-  margin-left: 60px;
+  margin-left: 20px;
   height: 80px;
+  width: 480px;
+  border-bottom: 1px solid $whiteColor;
 }
-
+.showTeamsIcons {
+  display: flex;
+  gap: 20px;
+  margin-left: 30px;
+}
+.showTeamsIcons div:hover {
+  cursor: pointer;
+  filter: brightness(75%);
+}
 .showTeamsButtonDiv {
   display: flex;
   justify-content: center;

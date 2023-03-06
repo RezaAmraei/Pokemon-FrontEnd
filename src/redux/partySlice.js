@@ -1,20 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let localStorageParty = JSON.parse(localStorage.getItem("teams"));
-if (localStorageParty) {
-  localStorageParty = localStorageParty[0].team;
-}
-
-const initialState = {
-  party: localStorageParty || [],
-  ui: {
+// let localStorageParty = JSON.parse(localStorage.getItem("teams"));
+// if (localStorageParty) {
+//   localStorageParty = localStorageParty[0].team;
+// }
+const initalUiState = () => {
+  return {
     editListMenuShown: false,
     list: [],
     currentInput: "",
     currentMove: 0,
     searchButtonShowButton: false,
     pokemonConfirmed: false,
-  },
+  };
+};
+const initialState = {
+  party: [],
+  // party: localStorageParty || [],
+  ui: initalUiState(),
   pokemon: {
     moveset: ["", "", "", ""],
     addPokemon: null,
@@ -65,6 +68,11 @@ export const counterSlice = createSlice({
     pickIndexForCurrentTeam: (state, action) => {
       state.currentTeam = action.payload;
     },
+    saveButtonPressed: (state, action) => {
+      state.ui = initalUiState();
+      state.pokemonmoveset = ["", "", "", ""];
+      state.pokemonaddPokemon = null;
+    },
   },
 });
 
@@ -80,6 +88,7 @@ export const {
   togglePokemonConfirmed,
   resetParty,
   pickIndexForCurrentTeam,
+  saveButtonPressed,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;

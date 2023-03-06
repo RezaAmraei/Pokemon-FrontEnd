@@ -6,7 +6,7 @@ import Button from "../Button/Button";
 const NoTeams = () => {
   const navigate = useNavigate();
   function createTeam() {
-    navigate("/create-team");
+    navigate("/create-team/0");
   }
   return (
     <div className="noTeams">

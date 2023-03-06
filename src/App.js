@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route exact path="/build" element={<Build />} />
-          <Route exact path="/create-team" element={<Create />} />
+          <Route exact path="/create-team/:teamNumber" element={<Create />} />
         </Routes>
       </BrowserRouter>
     </div>
