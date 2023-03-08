@@ -33,20 +33,33 @@ export const counterSlice = createSlice({
     addPokemonToParty: (state, action) => {
       state.party = [...state.party, action.payload];
     },
+    pickIndexForCurrentTeam: (state, action) => {
+      state.currentTeam = action.payload;
+    },
     resetParty: (state, action) => {
       state.party = [...action.payload];
     },
-    toggleEditListMenuShown: (state) => {
-      state.ui.editListMenuShown = !state.ui.editListMenuShown;
+
+    saveButtonPressed: (state, action) => {
+      state.ui = initalUiState();
+      state.pokemonmoveset = ["", "", "", ""];
+      state.pokemonaddPokemon = null;
     },
-    setList: (state, action) => {
-      state.ui.list = [...action.payload];
+    setAddPokemon: (state, action) => {
+      state.pokemon.addPokemon = action.payload;
     },
     setCurrentInput: (state, action) => {
       state.ui.currentInput = action.payload;
     },
     setCurrentMove: (state, action) => {
       state.ui.currentMove = action.payload;
+    },
+    setList: (state, action) => {
+      state.ui.list = [...action.payload];
+    },
+
+    setListOfTeamsFromLocalStorage: (state, action) => {
+      state.listOfTeams = [...action.payload];
     },
     setMoveset: (state, action) => {
       if (action.payload == "reset") {
@@ -57,25 +70,16 @@ export const counterSlice = createSlice({
       temp[action.payload.index] = action.payload.move;
       state.pokemon.moveset = temp;
     },
-    setAddPokemon: (state, action) => {
-      state.pokemon.addPokemon = action.payload;
+
+    toggleEditListMenuShown: (state) => {
+      state.ui.editListMenuShown = !state.ui.editListMenuShown;
     },
-    toggleSearchBarButton: (state, action) => {
-      state.ui.searchButtonShowButton = action.payload;
-    },
+
     togglePokemonConfirmed: (state, action) => {
       state.ui.pokemonConfirmed = action.payload;
     },
-    pickIndexForCurrentTeam: (state, action) => {
-      state.currentTeam = action.payload;
-    },
-    saveButtonPressed: (state, action) => {
-      state.ui = initalUiState();
-      state.pokemonmoveset = ["", "", "", ""];
-      state.pokemonaddPokemon = null;
-    },
-    setListOfTeamsFromLocalStorage: (state, action) => {
-      state.listOfTeams = [...action.payload];
+    toggleSearchBarButton: (state, action) => {
+      state.ui.searchButtonShowButton = action.payload;
     },
   },
 });
