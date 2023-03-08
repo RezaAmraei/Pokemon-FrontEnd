@@ -1,1 +1,32 @@
 @import "../../../Variables/Variables.scss";
+
+.deleteTeamButtonsDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.deleteTeamButton {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: grey;
+  font-family: $titleFont;
+  font-weight: 500;
+  font-size: 18px;
+  color: $whiteColor;
+  cursor: pointer;
+}
+
+#deleteTeamModal {
+  color: $whiteColor;
+  background-color: $backgroundColor;
+}
+
+#deleteTeamDeleteButton {
+  background-color: rgb(222, 0, 0);
+  color: $whiteColor;
+}

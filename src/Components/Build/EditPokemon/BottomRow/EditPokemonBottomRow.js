@@ -11,6 +11,7 @@ import {
   togglePokemonConfirmed,
   toggleSearchBarButton,
   saveButtonPressed,
+  setListOfTeamsFromLocalStorage,
 } from "../../../../redux/partySlice";
 
 const EditPokemonBottomRow = ({ currPokemon, ability }) => {
@@ -27,12 +28,12 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
       moveset,
       ability,
     };
-
-    if (JSON.parse(localStorage.getItem("teams"))) {
-      let temp = JSON.parse(localStorage.getItem("teams"));
+    let temp = JSON.parse(localStorage.getItem("teams"));
+    if (temp) {
       if (temp[teamNumber]) {
         temp[teamNumber].team.push(pokemonToAdd);
         localStorage.setItem("teams", JSON.stringify(temp));
+        dispatch(setListOfTeamsFromLocalStorage(temp));
         dispatch(addPokemonToParty(pokemonToAdd));
       } else {
         temp[teamNumber] = {
@@ -41,6 +42,7 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
         };
         localStorage.setItem("teams", JSON.stringify(temp));
         dispatch(addPokemonToParty(pokemonToAdd));
+        dispatch(setListOfTeamsFromLocalStorage(temp));
       }
     } else {
       localStorage.setItem(
@@ -53,6 +55,11 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
         ])
       );
       dispatch(addPokemonToParty(pokemonToAdd));
+      dispatch(
+        setListOfTeamsFromLocalStorage(
+          JSON.parse(localStorage.getItem("teams"))
+        )
+      );
     }
     dispatch(saveButtonPressed());
   }

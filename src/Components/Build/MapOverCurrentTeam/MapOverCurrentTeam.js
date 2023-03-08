@@ -4,9 +4,9 @@ import { selectParty, selectCurrentTeam } from "../../../redux/selectors";
 
 const MapOverCurrentTeam = ({ index }) => {
   const currentTeamIndex = useSelector(selectCurrentTeam);
-  const currentTeam = JSON.parse(localStorage.getItem("teams"))[
-    currentTeamIndex
-  ].team;
+  // const currentTeam = JSON.parse(localStorage.getItem("teams"))[
+  //   currentTeamIndex
+  // ].team;
   const party = useSelector(selectParty);
   console.log(party);
   return (

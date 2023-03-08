@@ -23,6 +23,7 @@ const initialState = {
     addPokemon: null,
   },
   currentTeam: 0,
+  listOfTeams: [...JSON.parse(localStorage.getItem("teams"))],
 };
 
 export const counterSlice = createSlice({
@@ -73,6 +74,9 @@ export const counterSlice = createSlice({
       state.pokemonmoveset = ["", "", "", ""];
       state.pokemonaddPokemon = null;
     },
+    setListOfTeamsFromLocalStorage: (state, action) => {
+      state.listOfTeams = [...action.payload];
+    },
   },
 });
 
@@ -89,6 +93,7 @@ export const {
   resetParty,
   pickIndexForCurrentTeam,
   saveButtonPressed,
+  setListOfTeamsFromLocalStorage,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;
