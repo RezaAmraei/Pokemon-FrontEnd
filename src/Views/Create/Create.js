@@ -55,10 +55,7 @@ const Create = () => {
 
           {/* Div to confirm that this is the currect Pokeon You want to edit */}
           {addPokemon && showConfirmPokemon && (
-            <PokeMonChecker
-              addPokemon={addPokemon}
-              setShowConfirmPokemon={setShowConfirmPokemon}
-            />
+            <PokeMonChecker setShowConfirmPokemon={setShowConfirmPokemon} />
           )}
           {/* Button to confirm youre ready to start building your team */}
           {addPokemonButton && (

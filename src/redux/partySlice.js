@@ -39,7 +39,9 @@ export const counterSlice = createSlice({
     resetParty: (state, action) => {
       state.party = [...action.payload];
     },
-
+    resetPokemon: (state, action) => {
+      state.pokemon = { moveset: ["", "", "", ""], addPokemon: null };
+    },
     saveButtonPressed: (state, action) => {
       state.ui = initalUiState();
       state.pokemonmoveset = ["", "", "", ""];
@@ -98,6 +100,7 @@ export const {
   pickIndexForCurrentTeam,
   saveButtonPressed,
   setListOfTeamsFromLocalStorage,
+  resetPokemon,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;

@@ -4,13 +4,15 @@ import NavBar from "../../Components/NavBar";
 import "../../CSS/Main.css";
 import NoTeams from "../../Components/Build/NoTeams";
 import ShowTeams from "../../Components/Build/ShowTeams/ShowTeams";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectListOfTeams } from "../../redux/selectors";
+import { resetPokemon } from "../../redux/partySlice";
 
 const Build = () => {
   //localStorage.removeItem("teams");
+  const dispatch = useDispatch();
   const localStorageParty = useSelector(selectListOfTeams);
-  console.log(localStorageParty);
+  dispatch(resetPokemon());
 
   return (
     <div className="mainPage">
