@@ -3,7 +3,7 @@ import EditIcon from "@mui/icons-material/Edit";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { resetParty } from "../../../redux/partySlice";
-import ConfirmDeleteTeam from "../../Modals/ConfirmDeleteTeam/ConfirmDeleteTeam";
+import ConfirmDelete from "../../Modals/ConfirmDelete/ConfirmDelete";
 import "./ShowTeams.css";
 
 const ShowTeams = () => {
@@ -44,11 +44,12 @@ const ShowTeams = () => {
                       />
                     </div>
                     <div>
-                      <ConfirmDeleteTeam
-                        teamName={teamName}
+                      <ConfirmDelete
+                        nameThatIsBeingDeleted={teamName}
                         index={i}
-                        localStorageParty={localStorageParty}
+                        arrayToDeleteFrom={localStorageParty}
                         setParties={setParties}
+                        teamOrPokemon={"team"}
                       />
                     </div>
                   </div>

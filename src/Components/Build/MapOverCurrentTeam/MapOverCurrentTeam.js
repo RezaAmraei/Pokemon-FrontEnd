@@ -1,20 +1,29 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectParty, selectCurrentTeam } from "../../../redux/selectors";
+import { selectParty } from "../../../redux/selectors";
+import UpperCaseFirstLetter from "../../../Utils/UpperCaseFirstLetter.js";
+import ConfirmDelete from "../../Modals/ConfirmDelete/ConfirmDelete";
+import "./mapOverCurrentTeam.css";
 
-const MapOverCurrentTeam = ({ index }) => {
-  const currentTeamIndex = useSelector(selectCurrentTeam);
-  // const currentTeam = JSON.parse(localStorage.getItem("teams"))[
-  //   currentTeamIndex
-  // ].team;
+const MapOverCurrentTeam = () => {
   const party = useSelector(selectParty);
-  console.log(party);
   return (
-    <>
+    <div className="mapOverCurrentTeam">
       {party.map((pokemon, i) => {
-        return <div key={i}>{pokemon.name}</div>;
+        console.log(pokemon);
+        return (
+          <div key={i} className="mapOverCurrentTeamSinglePokemon">
+            <ConfirmDelete
+              nameThatIsBeingDeleted={UpperCaseFirstLetter(pokemon.name)}
+              index={i}
+              arrayToDeleteFrom={party}
+              teamOrPokemon={"pokemon"}
+              pokemonImage={pokemon.image.front_default}
+            />
+          </div>
+        );
       })}
-    </>
+    </div>
   );
 };
 

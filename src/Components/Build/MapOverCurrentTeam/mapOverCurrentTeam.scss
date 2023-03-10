@@ -1,0 +1,13 @@
+@import "../../../Variables/Variables.scss";
+
+.mapOverCurrentTeam {
+  display: flex;
+}
+
+.mapOverCurrentTeamSinglePokemon {
+  display: flex;
+  align-items: center;
+}
+.mapOverCurrentTeamImage {
+  height: 100px;
+}
