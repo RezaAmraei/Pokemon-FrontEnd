@@ -5,7 +5,8 @@ import Modal from "@mui/material/Modal";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
 import { setListOfTeamsFromLocalStorage } from "../../../redux/partySlice";
-import "./confirmDeleteTeam.css";
+import "./confirmDelete.css";
+import DeleteToolTip from "../../Build/MapOverCurrentTeam/DeleteToolTip/DeleteToolTip";
 
 const style = {
   position: "absolute",
@@ -19,23 +20,22 @@ const style = {
   p: 4,
 };
 
-const ConfirmDeleteTeam = ({
-  teamName,
+const ConfirmDelete = ({
+  nameThatIsBeingDeleted,
   index,
-  localStorageParty,
-  setParties,
+  arrayToDeleteFrom,
+  setParties = null,
+  teamOrPokemon,
+  pokemonImage = null,
 }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const dispatch = useDispatch();
 
-  const deleteTeam = () => {
-    const tempArr = [...localStorageParty];
-    console.log(tempArr);
+  const deleteTeamFunction = (tempArr) => {
     tempArr.splice(index, 1);
     setParties(tempArr);
-    handleClose();
     if (tempArr.length === 0) {
       dispatch(setListOfTeamsFromLocalStorage([]));
       localStorage.setItem("teams", JSON.stringify([]));
@@ -43,12 +43,26 @@ const ConfirmDeleteTeam = ({
     }
     localStorage.setItem("teams", JSON.stringify(tempArr));
   };
+
+  const deletePokemonFromParty = (tempArr) => {};
+  const deleteTeam = () => {
+    const tempArr = [...arrayToDeleteFrom];
+    if (teamOrPokemon === "team") deleteTeamFunction(tempArr);
+    if (teamOrPokemon === "pokemon") deletePokemonFromParty(tempArr);
+    handleClose();
+  };
   return (
     <div>
-      <DeleteIcon
-        sx={{ height: "80px", color: "rgb(233, 233, 233)" }}
-        onClick={handleOpen}
-      />
+      {teamOrPokemon === "team" ? (
+        <DeleteIcon
+          sx={{ height: "80px", color: "rgb(233, 233, 233)" }}
+          onClick={handleOpen}
+        />
+      ) : (
+        <div onClick={handleOpen}>
+          <DeleteToolTip pokemonImage={pokemonImage} />
+        </div>
+      )}
       <Modal
         open={open}
         onClose={handleClose}
@@ -57,7 +71,7 @@ const ConfirmDeleteTeam = ({
       >
         <Box sx={style} id="deleteTeamModal">
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Are you sure you want to delete {teamName}?
+            Are you sure you want to delete {nameThatIsBeingDeleted}?
           </Typography>
           <div className="deleteTeamButtonsDiv">
             <button className="deleteTeamButton" onClick={handleClose}>
@@ -77,4 +91,4 @@ const ConfirmDeleteTeam = ({
   );
 };
 
-export default ConfirmDeleteTeam;
+export default ConfirmDelete;
