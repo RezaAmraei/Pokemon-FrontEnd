@@ -10,3 +10,5 @@ export const selectSearchButtonShowButton = (state) =>
 export const selectPokemonConfirmed = (state) => state.ui.pokemonConfirmed;
 export const selectCurrentTeam = (state) => state.currentTeam;
 export const selectListOfTeams = (state) => state.listOfTeams;
+export const selectAddPokemonButton = (state) => state.addPokemonButton;
+export const selectShowConfirmPokemon = (state) => state.ui.showConfirmPokemon;

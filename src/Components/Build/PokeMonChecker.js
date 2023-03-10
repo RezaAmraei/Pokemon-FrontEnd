@@ -8,10 +8,11 @@ import {
   setAddPokemon,
   togglePokemonConfirmed,
   toggleSearchBarButton,
+  toggleShowConfirmPokemon,
 } from "../../redux/partySlice";
 import { selectAddPokemon } from "../../redux/selectors";
 
-const PokeMonChecker = ({ setShowConfirmPokemon }) => {
+const PokeMonChecker = () => {
   const dispatch = useDispatch();
   const addPokemon = useSelector(selectAddPokemon);
   function cancelButton() {
@@ -21,7 +22,7 @@ const PokeMonChecker = ({ setShowConfirmPokemon }) => {
 
   function confirmButton() {
     dispatch(togglePokemonConfirmed(true));
-    setShowConfirmPokemon(false);
+    dispatch(toggleShowConfirmPokemon());
     dispatch(toggleSearchBarButton(false));
   }
   return (

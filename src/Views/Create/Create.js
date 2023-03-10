@@ -15,8 +15,13 @@ import {
   selectParty,
   selectPokemonConfirmed,
   selectSearchButtonShowButton,
+  selectAddPokemonButton,
+  selectShowConfirmPokemon,
 } from "../../redux/selectors";
-import { toggleSearchBarButton } from "../../redux/partySlice";
+import {
+  toggleSearchBarButton,
+  toggleAddPokemonButton,
+} from "../../redux/partySlice";
 
 const Create = () => {
   const currentTeam = useSelector(selectCurrentTeam);
@@ -24,8 +29,8 @@ const Create = () => {
 
   const searchButtonShowButton = useSelector(selectSearchButtonShowButton);
   const pokemonConfirmed = useSelector(selectPokemonConfirmed);
-  const [showConfirmPokemon, setShowConfirmPokemon] = useState(true);
-  const [addPokemonButton, setAddPokemonButton] = useState(true);
+  const showConfirmPokemon = useSelector(selectShowConfirmPokemon);
+  const addPokemonButton = useSelector(selectAddPokemonButton);
   const addPokemon = useSelector(selectAddPokemon);
   const party = useSelector(selectParty);
 
@@ -33,7 +38,7 @@ const Create = () => {
 
   function clickButton() {
     dispatch(toggleSearchBarButton(true));
-    setAddPokemonButton(false);
+    dispatch(toggleAddPokemonButton());
   }
   return (
     <div className="mainPage">
@@ -43,20 +48,13 @@ const Create = () => {
         <span className="createTeamFont createTeamHeader">Pick your team!</span>
 
         <div className="createTeamMiddleCol">
+          {/* Map Over Current Pokemon in Team */}
+          {party && <MapOverCurrentTeam index={teamNumber} />}
           {/* Search Bar for when Add Pokemon is Clicked */}
           {searchButtonShowButton && <SearchBar home={false} />}
 
-          {/* Map Over Current Pokemon in Team */}
-          {party && (
-            <div className="createCurrentTeam">
-              <MapOverCurrentTeam index={teamNumber} />
-            </div>
-          )}
-
           {/* Div to confirm that this is the currect Pokeon You want to edit */}
-          {addPokemon && showConfirmPokemon && (
-            <PokeMonChecker setShowConfirmPokemon={setShowConfirmPokemon} />
-          )}
+          {addPokemon && showConfirmPokemon && <PokeMonChecker />}
           {/* Button to confirm youre ready to start building your team */}
           {addPokemonButton && (
             <Button

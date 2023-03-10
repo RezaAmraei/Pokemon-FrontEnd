@@ -12,11 +12,11 @@ const initalUiState = () => {
     currentMove: 0,
     searchButtonShowButton: false,
     pokemonConfirmed: false,
+    showConfirmPokemon: true,
   };
 };
 const initialState = {
   party: [],
-  // party: localStorageParty || [],
   ui: initalUiState(),
   pokemon: {
     moveset: ["", "", "", ""],
@@ -24,6 +24,7 @@ const initialState = {
   },
   currentTeam: 0,
   listOfTeams: [...JSON.parse(localStorage.getItem("teams"))],
+  addPokemonButton: true,
 };
 
 export const counterSlice = createSlice({
@@ -39,13 +40,19 @@ export const counterSlice = createSlice({
     resetParty: (state, action) => {
       state.party = [...action.payload];
     },
-    resetPokemon: (state, action) => {
+    resetPokemon: (state) => {
       state.pokemon = { moveset: ["", "", "", ""], addPokemon: null };
     },
-    saveButtonPressed: (state, action) => {
+    resetReduxUI: (state) => {
+      state.addPokemonButton = true;
       state.ui = initalUiState();
-      state.pokemonmoveset = ["", "", "", ""];
-      state.pokemonaddPokemon = null;
+      state.pokemon = { moveset: ["", "", "", ""], addPokemon: null };
+      state.party = [];
+    },
+    saveButtonPressed: (state) => {
+      state.ui = initalUiState();
+      state.pokemon.moveset = ["", "", "", ""];
+      state.pokemon.addPokemon = null;
     },
     setAddPokemon: (state, action) => {
       state.pokemon.addPokemon = action.payload;
@@ -72,7 +79,9 @@ export const counterSlice = createSlice({
       temp[action.payload.index] = action.payload.move;
       state.pokemon.moveset = temp;
     },
-
+    toggleAddPokemonButton: (state) => {
+      state.addPokemonButton = !state.addPokemonButton;
+    },
     toggleEditListMenuShown: (state) => {
       state.ui.editListMenuShown = !state.ui.editListMenuShown;
     },
@@ -82,6 +91,9 @@ export const counterSlice = createSlice({
     },
     toggleSearchBarButton: (state, action) => {
       state.ui.searchButtonShowButton = action.payload;
+    },
+    toggleShowConfirmPokemon: (state) => {
+      state.ui.showConfirmPokemon = !state.ui.showConfirmPokemon;
     },
   },
 });
@@ -101,6 +113,9 @@ export const {
   saveButtonPressed,
   setListOfTeamsFromLocalStorage,
   resetPokemon,
+  toggleAddPokemonButton,
+  resetReduxUI,
+  toggleShowConfirmPokemon,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;

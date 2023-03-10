@@ -6,13 +6,14 @@ import NoTeams from "../../Components/Build/NoTeams";
 import ShowTeams from "../../Components/Build/ShowTeams/ShowTeams";
 import { useSelector, useDispatch } from "react-redux";
 import { selectListOfTeams } from "../../redux/selectors";
-import { resetPokemon } from "../../redux/partySlice";
+import { resetPokemon, resetReduxUI } from "../../redux/partySlice";
 
 const Build = () => {
   //localStorage.removeItem("teams");
   const dispatch = useDispatch();
   const localStorageParty = useSelector(selectListOfTeams);
-  dispatch(resetPokemon());
+  //dispatch(resetPokemon());
+  dispatch(resetReduxUI());
 
   return (
     <div className="mainPage">

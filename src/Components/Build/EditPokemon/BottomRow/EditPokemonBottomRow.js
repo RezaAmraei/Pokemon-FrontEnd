@@ -12,6 +12,7 @@ import {
   toggleSearchBarButton,
   saveButtonPressed,
   setListOfTeamsFromLocalStorage,
+  toggleAddPokemonButton,
 } from "../../../../redux/partySlice";
 
 const EditPokemonBottomRow = ({ currPokemon, ability }) => {
@@ -29,6 +30,7 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
       ability,
     };
     let temp = JSON.parse(localStorage.getItem("teams"));
+
     if (temp) {
       if (temp[teamNumber]) {
         temp[teamNumber].team.push(pokemonToAdd);
@@ -61,6 +63,7 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
         )
       );
     }
+    dispatch(toggleAddPokemonButton());
     dispatch(saveButtonPressed());
   }
 
@@ -68,6 +71,8 @@ const EditPokemonBottomRow = ({ currPokemon, ability }) => {
     dispatch(toggleSearchBarButton(true));
     dispatch(setMoveset("reset"));
     dispatch(togglePokemonConfirmed(false));
+    dispatch(toggleAddPokemonButton());
+    dispatch(saveButtonPressed());
   };
 
   return (
