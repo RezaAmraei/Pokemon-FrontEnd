@@ -45,6 +45,10 @@ const Create = () => {
   const doneButton = () => {
     navigate("/build");
   };
+
+  const doesntExceedPartyLimit = () => {
+    return party.length < 6;
+  };
   return (
     <div className="mainPage">
       <ColumnOfPokeBalls side="left" />
@@ -63,7 +67,7 @@ const Create = () => {
           {/* Button to confirm youre ready to start building your team */}
 
           <div className="flex createTeamButtonsDiv">
-            {addPokemonButton && (
+            {addPokemonButton && doesntExceedPartyLimit && (
               <Button
                 text={"Add Pokemon"}
                 secondaryText={"+"}
@@ -71,11 +75,13 @@ const Create = () => {
                 onClick={clickButton}
               />
             )}
-            <Button
-              text={"Done"}
-              buttonClassName={"pokemonButton doneButton"}
-              onClick={doneButton}
-            />
+            {!addPokemon && (
+              <Button
+                text={"Done"}
+                buttonClassName={"pokemonButton doneButton"}
+                onClick={doneButton}
+              />
+            )}
           </div>
 
           {/* Div to edit pokemons move and abilities */}
