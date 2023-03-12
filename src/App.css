@@ -98,4 +98,8 @@ body {
 
 .normal {
   color: #a8a878 !important;
+}
+
+.pointer {
+  cursor: pointer;
 }/*# sourceMappingURL=App.css.map */

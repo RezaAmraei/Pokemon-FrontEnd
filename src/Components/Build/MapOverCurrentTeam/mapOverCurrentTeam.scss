@@ -2,12 +2,32 @@
 
 .mapOverCurrentTeam {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.mapOverCurrentTeamSinglePokemon {
+.flex {
   display: flex;
   align-items: center;
 }
 .mapOverCurrentTeamImage {
   height: 100px;
+}
+.mapOverCurrentTeamWholeParty {
+  display: flex;
+}
+.mapOverCurrentTeamName {
+  font-size: 30px;
+  color: $whiteColor;
+  font-family: $titleFont;
+  background-color: $backgroundColor;
+  border: none;
+  outline: none;
+}
+.mapOverCurrentTeamNameAndButton {
+  border-bottom: 1px solid $whiteColor;
+}
+#test {
+  border: none;
+  outline: none;
 }

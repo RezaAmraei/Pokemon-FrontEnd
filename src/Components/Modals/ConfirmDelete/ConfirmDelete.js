@@ -4,7 +4,10 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useDispatch } from "react-redux";
-import { setListOfTeamsFromLocalStorage } from "../../../redux/partySlice";
+import {
+  setListOfTeamsFromLocalStorage,
+  resetParty,
+} from "../../../redux/partySlice";
 import "./confirmDelete.css";
 import DeleteToolTip from "../../Build/MapOverCurrentTeam/DeleteToolTip/DeleteToolTip";
 
@@ -34,7 +37,6 @@ const ConfirmDelete = ({
   const dispatch = useDispatch();
 
   const deleteTeamFunction = (tempArr) => {
-    tempArr.splice(index, 1);
     setParties(tempArr);
     if (tempArr.length === 0) {
       dispatch(setListOfTeamsFromLocalStorage([]));
@@ -42,14 +44,19 @@ const ConfirmDelete = ({
       return;
     }
     localStorage.setItem("teams", JSON.stringify(tempArr));
+    return;
   };
 
-  const deletePokemonFromParty = (tempArr) => {};
+  const deletePokemonFromParty = (tempArr) => {
+    dispatch(resetParty([tempArr]));
+    return;
+  };
   const deleteTeam = () => {
     const tempArr = [...arrayToDeleteFrom];
+    tempArr.splice(index, 1);
+    handleClose();
     if (teamOrPokemon === "team") deleteTeamFunction(tempArr);
     if (teamOrPokemon === "pokemon") deletePokemonFromParty(tempArr);
-    handleClose();
   };
   return (
     <div>

@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { resetParty } from "../../../redux/partySlice";
 import ConfirmDelete from "../../Modals/ConfirmDelete/ConfirmDelete";
 import "./ShowTeams.css";
 
 const ShowTeams = () => {
   const localStorageParty = JSON.parse(localStorage.getItem("teams"));
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [parties, setParties] = useState([...localStorageParty]);
   const nav = (index) => {
@@ -36,7 +33,6 @@ const ShowTeams = () => {
                     <div
                       onClick={() => {
                         nav(i);
-                        dispatch(resetParty(localStorageParty[i].team));
                       }}
                     >
                       <EditIcon

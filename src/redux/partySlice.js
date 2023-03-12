@@ -34,6 +34,13 @@ export const counterSlice = createSlice({
     addPokemonToParty: (state, action) => {
       state.party = [...state.party, action.payload];
     },
+    changeTeamName: (state, action) => {
+      const temp = [...state.listOfTeams];
+      const teamIndex = action.payload.index;
+      temp[teamIndex].teamName = action.payload.newName;
+      state.listOfTeams = [...temp];
+      localStorage.setItem("teams", JSON.stringify(state.listOfTeams));
+    },
     pickIndexForCurrentTeam: (state, action) => {
       state.currentTeam = action.payload;
     },
@@ -116,6 +123,7 @@ export const {
   toggleAddPokemonButton,
   resetReduxUI,
   toggleShowConfirmPokemon,
+  changeTeamName,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;
