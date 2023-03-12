@@ -44,6 +44,11 @@
   cursor: pointer;
 }
 
+.doneButton {
+  height: 49px;
+  padding: 20px 20px;
+}
+
 @media (min-width: 0px) and (max-width: 750px) {
   .buttonCreateTeam {
     display: block;

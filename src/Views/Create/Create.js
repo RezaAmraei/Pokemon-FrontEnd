@@ -7,7 +7,7 @@ import "./Create-Team.css";
 import PokeMonChecker from "../../Components/Build/PokeMonChecker";
 import Button from "../../Components/Button/Button";
 import MapOverCurrentTeam from "../../Components/Build/MapOverCurrentTeam/MapOverCurrentTeam";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectAddPokemon,
@@ -26,6 +26,7 @@ import {
 const Create = () => {
   const currentTeam = useSelector(selectCurrentTeam);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const searchButtonShowButton = useSelector(selectSearchButtonShowButton);
   const pokemonConfirmed = useSelector(selectPokemonConfirmed);
@@ -40,6 +41,10 @@ const Create = () => {
     dispatch(toggleSearchBarButton(true));
     dispatch(toggleAddPokemonButton());
   }
+
+  const doneButton = () => {
+    navigate("/build");
+  };
   return (
     <div className="mainPage">
       <ColumnOfPokeBalls side="left" />
@@ -56,14 +61,22 @@ const Create = () => {
           {/* Div to confirm that this is the currect Pokeon You want to edit */}
           {addPokemon && showConfirmPokemon && <PokeMonChecker />}
           {/* Button to confirm youre ready to start building your team */}
-          {addPokemonButton && (
+
+          <div className="flex createTeamButtonsDiv">
+            {addPokemonButton && (
+              <Button
+                text={"Add Pokemon"}
+                secondaryText={"+"}
+                buttonClassName={"pokemonButton"}
+                onClick={clickButton}
+              />
+            )}
             <Button
-              text={"Add Pokemon"}
-              secondaryText={"+"}
-              buttonClassName={"pokemonButton"}
-              onClick={clickButton}
+              text={"Done"}
+              buttonClassName={"pokemonButton doneButton"}
+              onClick={doneButton}
             />
-          )}
+          </div>
 
           {/* Div to edit pokemons move and abilities */}
           {pokemonConfirmed && <EditPokemon addPokemon={addPokemon} />}
