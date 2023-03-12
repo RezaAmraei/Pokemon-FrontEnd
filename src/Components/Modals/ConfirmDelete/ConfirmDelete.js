@@ -9,7 +9,7 @@ import {
   resetParty,
 } from "../../../redux/partySlice";
 import "./confirmDelete.css";
-import DeleteToolTip from "../../Build/MapOverCurrentTeam/DeleteToolTip/DeleteToolTip";
+import EditToolTip from "../../Build/MapOverCurrentTeam/EditToolTip/EditToolTip";
 
 const style = {
   position: "absolute",
@@ -67,7 +67,7 @@ const ConfirmDelete = ({
         />
       ) : (
         <div onClick={handleOpen}>
-          <DeleteToolTip pokemonImage={pokemonImage} />
+          <EditToolTip pokemonImage={pokemonImage} />
         </div>
       )}
       <Modal
