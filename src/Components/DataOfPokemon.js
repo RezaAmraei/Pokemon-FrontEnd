@@ -7,10 +7,8 @@ import SetUpForTables from "../Utils/SetUpForTables";
 
 const DataOfPokemon = ({ pokemonDisplay, types }) => {
   let splitName;
-  let dataForTable;
 
   splitName = SplitStringInHalf(pokemonDisplay.name);
-  dataForTable = SetUpForTables(pokemonDisplay);
   return (
     <>
       {pokemonDisplay && (
@@ -24,8 +22,8 @@ const DataOfPokemon = ({ pokemonDisplay, types }) => {
             </span>
           </div>
           <div className="dataOfPokemonImages">
-            <img src={pokemonDisplay.sprites.front_default} />
-            <img src={pokemonDisplay.sprites.front_shiny} />
+            <img src={pokemonDisplay.sprites.front_default} alt="Front of pokemon"/>
+            <img src={pokemonDisplay.sprites.front_shiny} alt="Front of shiny pokemon" />
           </div>
           <TableForData
             name={pokemonDisplay.name}

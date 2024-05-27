@@ -14,7 +14,7 @@ import "../CSS/Navbar.css";
 export default function HamburgerNavBar({ types }) {
   const navigate = useNavigate();
   function linksNav(text) {
-    if (text == "Home") {
+    if (text === "Home") {
       navigate("/");
       return;
     } else if (text === "X") {

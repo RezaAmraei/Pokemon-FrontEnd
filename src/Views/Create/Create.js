@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ColumnOfPokeBalls from "../../Components/ColumnOfPokeBalls";
 import NavBar from "../../Components/NavBar";
 import SearchBar from "../../Components/SearchBar";
@@ -11,7 +11,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectAddPokemon,
-  selectCurrentTeam,
   selectParty,
   selectPokemonConfirmed,
   selectSearchButtonShowButton,
@@ -24,7 +23,7 @@ import {
 } from "../../redux/partySlice";
 
 const Create = () => {
-  const currentTeam = useSelector(selectCurrentTeam);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

@@ -78,7 +78,7 @@ export const counterSlice = createSlice({
       state.listOfTeams = [...action.payload];
     },
     setMoveset: (state, action) => {
-      if (action.payload == "reset") {
+      if (action.payload === "reset") {
         state.pokemon.moveset = ["", "", "", ""];
         return;
       }
